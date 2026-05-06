@@ -1,25 +1,24 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 
 export default function Education() {
   return (
-   <section id="education" className="min-h-screen bg-black text-white px-6 md:px-20 py-28 pt-32 relative">
-
+    <section id="education" className="section-surface min-h-screen w-full text-white">
+      <div className="section-inner relative py-24 md:py-32">
       {/* Heading */}
-      <p className="text-sm tracking-[6px] text-lime-400 mb-4 text-center">
+      <p className="text-sm tracking-[6px] text-[var(--accent-primary)] mb-4 text-center">
         WHAT I HAVE STUDIED SO FAR
       </p>
 
-      <h2 className="text-5xl md:text-7xl font-extrabold mb-24 text-center">
-        Education<span className="text-lime-400">.</span>
+      <h2 className="text-3xl md:text-5xl font-extrabold mb-24 text-center">
+        Education<span className="text-[var(--accent-primary)]">.</span>
       </h2>
 
       {/* Vertical Line */}
-      <div className="absolute left-1/2 top-56 bottom-10 w-[2px] bg-lime-400/30"></div>
+      <div className="absolute left-1/2 top-56 bottom-10 w-[2px] bg-[#F56639]/30"></div>
 
       <div className="relative flex flex-col gap-32">
-
         {/* Entry 1 - LEFT */}
         <motion.div
           initial={{ opacity: 0, x: -80 }}
@@ -28,9 +27,11 @@ export default function Education() {
           viewport={{ once: true }}
           className="relative flex justify-start w-full"
         >
-          <div className="w-full md:w-1/2 bg-[#111] border border-lime-400/30 
-          p-8 rounded-xl shadow-[0_0_25px_#84cc16]">
-
+          <div
+            className="surface-panel w-full border border-[#F56639]/30 
+          md:w-1/2
+          p-8 rounded-xl shadow-[0_0_25px_rgba(243,102,57,0.32)]"
+          >
             <h3 className="text-2xl font-bold mb-2">
               Bachelor of Technology (BTech)
             </h3>
@@ -39,7 +40,7 @@ export default function Education() {
               Silver Oak University, Ahmedabad
             </p>
 
-            <p className="text-lime-400 font-semibold mb-4">
+            <p className="text-[var(--accent-primary)] font-semibold mb-4">
               Computer Science Engineering | CGPA: 9.28
             </p>
 
@@ -50,9 +51,10 @@ export default function Education() {
         </motion.div>
 
         {/* Center Dot 1 */}
-        <div className="absolute left-1/2 -translate-x-1/2 top-[260px] 
-        w-6 h-6 rounded-full bg-lime-400 shadow-[0_0_15px_#84cc16]"></div>
-
+        <div
+          className="absolute left-1/2 -translate-x-1/2 top-[260px] 
+        w-6 h-6 rounded-full bg-[var(--accent-primary)] shadow-[0_0_15px_rgba(243,102,57,0.4)]"
+        ></div>
 
         {/* Entry 2 - RIGHT */}
         <motion.div
@@ -62,26 +64,30 @@ export default function Education() {
           viewport={{ once: true }}
           className="relative flex justify-end w-full"
         >
-          <div className="w-full md:w-1/2 bg-[#111] border border-lime-400/30 
-          p-8 rounded-xl shadow-[0_0_25px_#84cc16]">
-
-            <h3 className="text-2xl font-bold mb-4">
-              Academic Highlights
-            </h3>
+          <div
+            className="surface-panel w-full border border-[#F56639]/30 
+          md:w-1/2
+          p-8 rounded-xl shadow-[0_0_25px_rgba(243,102,57,0.32)]"
+          >
+            <h3 className="text-2xl font-bold mb-4">Academic Highlights</h3>
 
             <ul className="text-gray-300 space-y-3">
               <li>• Strong foundation in Data Structures & Algorithms</li>
               <li>• Advanced understanding of DBMS, OS & Computer Networks</li>
-              <li>• Focused on scalable system design & backend architecture</li>
+              <li>
+                • Focused on scalable system design & backend architecture
+              </li>
             </ul>
           </div>
         </motion.div>
 
         {/* Center Dot 2 */}
-        <div className="absolute left-1/2 -translate-x-1/2 top-[600px] 
-        w-6 h-6 rounded-full bg-lime-400 shadow-[0_0_15px_#84cc16]"></div>
-
+        <div
+          className="absolute left-1/2 -translate-x-1/2 top-[600px] 
+        w-6 h-6 rounded-full bg-[var(--accent-primary)] shadow-[0_0_15px_rgba(243,102,57,0.4)]"
+        ></div>
+      </div>
       </div>
     </section>
-  )
+  );
 }

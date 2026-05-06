@@ -1,107 +1,172 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { ExternalLink, Github } from "lucide-react";
+import { useState, type ReactNode } from "react";
+import { ChevronDown, ChevronUp, Link2 } from "lucide-react";
 
-const projects = [
-  {
-    title: "CheckMate ♟️",
-    description:
-      "Real-time chess platform with live WebRTC video chat and WebSocket-based game state sync. Built for high concurrency and ultra-low latency gameplay.",
-    tech: ["React", "WebRTC", "WebSockets", "Node.js"],
-    live: "https://checkmate-dhruv.vercel.app/",
-    code: "https://github.com/Dhruvp132",
-  },
-  {
-    title: "Muzique 🎵",
-    description:
-      "Collaborative SaaS music platform with real-time playlist voting, Stripe payments, and scalable architecture for hundreds to thousands of users.",
-    tech: ["Next.js", "TypeScript", "Prisma", "PostgreSQL"],
-    live: "https://github.com/Dhruvp132/Muzique",
-    code: "https://github.com/Dhruvp132/Muzique",
-  },
-  {
-    title: "AlgoViz 📊",
-    description:
-      "Interactive algorithm visualizer supporting Dijkstra, DFS, BFS, Merge Sort, Quick Sort & Bubble Sort for real-time educational feedback.",
-    tech: ["React", "JavaScript", "Algorithms", "Visualization"],
-    live: "https://algoviz-dhruv.vercel.app/",
-    code: "https://github.com/Dhruvp132",
-  },
-];
+export interface ProjectTag {
+  label: string;
+}
 
-export default function CVProjects() {
+export interface ProjectFeature {
+  text: string;
+}
+
+export interface Project {
+  id: string;
+  title: string;
+  date: string;
+  icon: ReactNode;
+  description: string;
+  liveUrl: string;
+  features: ProjectFeature[];
+  tags: ProjectTag[];
+}
+
+interface ProjectsSectionProps {
+  projects: Project[];
+}
+
+export function ProjectsSection({ projects }: ProjectsSectionProps) {
+  const [showAllProjects, setShowAllProjects] = useState(false);
+  const [expandedProjects, setExpandedProjects] = useState<Set<string>>(
+    new Set(),
+  );
+
+  const visibleProjects = showAllProjects ? projects : projects.slice(0, 3);
+  const hasMore = projects.length > 3;
+
+  const toggleProjectExpand = (projectId: string) => {
+    setExpandedProjects((prevExpandedProjects) => {
+      const newExpandedProjects = new Set(prevExpandedProjects);
+      if (newExpandedProjects.has(projectId)) {
+        newExpandedProjects.delete(projectId);
+      } else {
+        newExpandedProjects.add(projectId);
+      }
+      return newExpandedProjects;
+    });
+  };
+
   return (
-   <section id="projects" className="relative bg-black py-24 pt-32 text-white overflow-hidden">
-      {/* Neon radial glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(57,255,20,0.08),transparent_70%)]" />
-
-      <div className="relative max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <p className="text-green-400 uppercase tracking-widest text-sm">
-            Featured Work
-          </p>
-          <h2 className="text-5xl font-bold mt-4">
-            Projects<span className="text-green-400">.</span>
-          </h2>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-8">
-          {projects.map((project, i) => (
-            <motion.div
-              key={project.title}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: i * 0.2 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -12 }}
-              className="group relative bg-zinc-900/60 backdrop-blur-xl border border-green-500/20 rounded-2xl p-6 overflow-hidden transition-all duration-500 hover:shadow-[0_0_30px_rgba(57,255,20,0.2)]"
-            >
-              {/* Animated border glow */}
-              <div className="absolute inset-0 rounded-2xl border border-green-400/0 group-hover:border-green-400/60 transition-all duration-500 pointer-events-none" />
-
-              <h3 className="text-xl font-semibold group-hover:text-green-400 transition-colors duration-300">
-                {project.title}
-              </h3>
-
-              <p className="text-zinc-400 text-sm leading-relaxed mt-4">
-                {project.description}
-              </p>
-
-              {/* Tech stack */}
-              <div className="flex flex-wrap gap-2 mt-4">
-                {project.tech.map((item) => (
-                  <span
-                    key={item}
-                    className="text-xs px-3 py-1 rounded-full bg-green-500/10 text-green-400 border border-green-500/20"
-                  >
-                    {item}
-                  </span>
-                ))}
-              </div>
-
-              {/* Buttons */}
-              <div className="flex gap-4 mt-6">
-                <a
-                  href={project.live}
-                  target="_blank"
-                  className="flex items-center gap-2 text-sm px-4 py-2 rounded-lg bg-green-500 text-black font-medium hover:bg-green-400 transition-all duration-300 shadow-lg shadow-green-500/30"
-                >
-                  Live <ExternalLink size={16} />
-                </a>
-
-                <a
-                  href={project.code}
-                  target="_blank"
-                  className="flex items-center gap-2 text-sm px-4 py-2 rounded-lg border border-green-500/30 hover:border-green-400 hover:text-green-400 transition-all duration-300"
-                >
-                  Code <Github size={16} />
-                </a>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+    <div
+      id="projects"
+      className="surface-panel w-full overflow-hidden rounded-2xl border border-[#F56639]/20 text-white"
+    >
+      <div className="text-center mt-6 mb-6">
+        <h2 className="mt-10 mb-10 text-3xl font-extrabold">Projects({projects.length})</h2>
       </div>
-    </section>
+
+      <div className="divide-y divide-[#F56639]/15">
+        {visibleProjects.map((project) => {
+          const isExpanded = expandedProjects.has(project.id);
+
+          return (
+            <div
+              key={project.id}
+              className="border-l-4 border-l-[#F56639]/25 transition-colors hover:border-l-[var(--accent-primary)]"
+            >
+              <div className="px-6 py-6 md:px-8">
+                <div className="flex items-start gap-4">
+                  <div className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[#F56639]/30 bg-[#F56639]/10 text-xs font-semibold text-[var(--accent-primary)]">
+                    {project.icon}
+                  </div>
+
+                  <div className="min-w-0 flex-1">
+                    <h3 className="text-lg font-medium text-white">{project.title}</h3>
+                    <p className="mt-1 text-sm text-zinc-400">{project.date}</p>
+                  </div>
+
+                  <div className="ml-4 flex shrink-0 gap-3">
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={`Open ${project.title} live project`}
+                      className="rounded p-2 transition-colors hover:bg-[#F56639]/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-primary)]"
+                    >
+                      <Link2 size={18} className="text-[var(--accent-primary)]" />
+                    </a>
+
+                    <button
+                      type="button"
+                      onClick={() => toggleProjectExpand(project.id)}
+                      aria-label={`${isExpanded ? "Collapse" : "Expand"} ${project.title} details`}
+                      aria-expanded={isExpanded}
+                      className="rounded p-2 transition-colors hover:bg-[#F56639]/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-primary)]"
+                    >
+                      {isExpanded ? (
+                        <ChevronUp size={18} className="text-zinc-300" />
+                      ) : (
+                        <ChevronDown size={18} className="text-zinc-300" />
+                      )}
+                    </button>
+                  </div>
+                </div>
+
+                {isExpanded && (
+                  <div className="mt-6 space-y-4">
+                    <p className="text-sm leading-relaxed text-zinc-300">
+                      {project.description}
+                    </p>
+
+                    {project.features.length > 0 && (
+                      <ul className="space-y-2">
+                        {project.features.map((feature, index) => (
+                          <li
+                            key={`${project.id}-feature-${index}`}
+                            className="flex gap-3 text-sm text-zinc-300"
+                          >
+                            <span className="shrink-0 text-[var(--accent-primary)]">•</span>
+                            <span>{feature.text}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+
+                    {project.tags.length > 0 && (
+                      <div className="flex flex-wrap gap-2 pt-2">
+                        {project.tags.map((tag, index) => (
+                          <span
+                            key={`${project.id}-tag-${index}`}
+                            className="rounded border border-[#F56639]/25 bg-[#F56639]/10 px-3 py-1 font-mono text-xs text-[var(--accent-primary)] transition-colors hover:bg-[#F36639]/20"
+                          >
+                            {tag.label}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                )}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      {hasMore && (
+        <div className="border-t border-[#F56639]/20 px-6 py-6 md:px-8">
+          <button
+            type="button"
+            onClick={() => setShowAllProjects((prevShowAllProjects) => !prevShowAllProjects)}
+            className="group flex items-center gap-2 text-sm font-medium text-zinc-300 transition-colors hover:text-[var(--accent-primary)]"
+          >
+            {showAllProjects ? (
+              <ChevronUp
+                size={16}
+                className="transition-transform group-hover:-translate-y-0.5"
+              />
+            ) : (
+              <ChevronDown
+                size={16}
+                className="transition-transform group-hover:-translate-y-0.5"
+              />
+            )}
+            {showAllProjects ? "Show Less" : "Show More"}
+          </button>
+        </div>
+      )}
+    </div>
   );
 }
+
+export default ProjectsSection;

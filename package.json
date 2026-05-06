@@ -16,7 +16,8 @@
     "gsap": "^3.14.2",
     "leva": "^0.10.1",
     "lucide-react": "^0.575.0",
-    "next": "16.1.6",
+    "motion": "^12.38.0",
+    "next": "16.2.3",
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "react-icons": "^5.5.0",
@@ -29,8 +30,14 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "16.1.6",
+    "eslint-config-next": "16.2.3",
     "tailwindcss": "^4",
     "typescript": "^5"
+  },
+  "overrides": {
+    "flatted": "3.4.2",
+    "picomatch": "4.0.4",
+    "postcss": "8.5.10",
+    "brace-expansion": "5.0.5"
   }
 }

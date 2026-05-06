@@ -50,11 +50,12 @@ export default function Certifications() {
   return (
     <section
       id="certifications"
-      className="bg-black text-white py-40 pt-32 overflow-hidden"
+      className="section-surface w-full overflow-hidden py-40 pt-32 text-white"
     >
+      <div className="section-inner-wide">
       {/* Heading */}
       <div className="text-center mb-24">
-        <p className="text-[#39FF14] tracking-[0.4em] mb-6 text-sm">
+        <p className="text-[var(--accent-primary)] tracking-[0.4em] mb-6 text-sm">
           CONTINUOUS LEARNING
         </p>
         <h2 className="text-6xl md:text-8xl font-extrabold">
@@ -63,14 +64,14 @@ export default function Certifications() {
       </div>
 
       {/* Cards */}
-      <div className="relative flex justify-center items-center h-[520px] perspective-[1200px]">
+      <div className="relative flex justify-center items-center h-[200px] perspective-[1200px]">
         {certifications.map((cert, index) => {
           const position = getPosition(index);
 
           return (
             <motion.div
               key={cert.id}
-              className="absolute w-[360px] md:w-[480px] h-[420px] 
+              className="absolute w-[360px] md:w-[360px] h-[250px] 
               rounded-3xl overflow-hidden"
               animate={
                 position === "center"
@@ -80,8 +81,7 @@ export default function Certifications() {
                       rotateY: 0,
                       opacity: 1,
                       zIndex: 3,
-                      boxShadow:
-                        "0px 0px 70px rgba(57,255,20,0.4)",
+                      boxShadow: "0px 0px 70px rgba(var(--accent-secondary-rgb), 0.4)",
                     }
                   : position === "left"
                   ? {
@@ -114,25 +114,25 @@ export default function Certifications() {
               {/* CONTENT */}
               <div className="relative z-10 p-10 flex flex-col justify-end h-full">
 
-                <p className="text-[#39FF14] text-lg font-semibold mb-2">
+                <p className="text-[var(--accent-primary)] text-md font-semibold mb-2">
                   {cert.org}
                 </p>
 
-                <h3 className="text-2xl md:text-3xl font-bold mb-4">
+                <h3 className="text-2xl md:text-xl font-bold mb-4">
                   {cert.title}
                 </h3>
 
-                <p className="text-gray-200 text-sm leading-relaxed mb-6">
+                {/* <p className="text-gray-200 text-xs leading-relaxed mb-6">
                   {cert.desc}
-                </p>
+                </p> */}
 
                 <a
                   href={cert.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block px-6 py-2 border border-[#39FF14] 
-                  rounded-full text-[#39FF14] 
-                  hover:bg-[#39FF14] hover:text-black 
+                  className="inline-block px-6 py-2 border bg-white border-[var(--accent-primary)] 
+                  rounded-full text-[var(--accent-primary)] 
+                  hover:bg-[var(--accent-secondary)] hover:text-black 
                   transition duration-300 w-fit"
                 >
                   View Credential →
@@ -151,11 +151,12 @@ export default function Certifications() {
             onClick={() => setActive(index)}
             className={`h-2 rounded-full transition-all duration-300 ${
               active === index
-                ? "w-6 bg-[#39FF14]"
+                ? "w-6 bg-[var(--accent-primary)]"
                 : "w-2 bg-neutral-600"
             }`}
           />
         ))}
+      </div>
       </div>
     </section>
   );

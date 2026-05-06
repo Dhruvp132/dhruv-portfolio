@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Pacifico } from "next/font/google";
 
+import DotFieldBackground from "./components/DotFieldBackground";
+import CursorEffect from "./components/CursorEffect";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -31,10 +33,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} ${pacifico.variable} antialiased bg-black`}
-      >
-        {children}
+      <body className={`${geistSans.variable} ${geistMono.variable} ${pacifico.variable} antialiased md:max-width-xl mx-auto flex-wrap text-wrap md:px-40 bg-black`}>
+        {/* <CursorEffect /> */}
+        <div className="">
+          <DotFieldBackground />
+          <div className="app-content">{children}</div>
+        </div>
       </body>
     </html>
   );

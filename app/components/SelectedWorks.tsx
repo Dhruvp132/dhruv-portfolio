@@ -28,17 +28,19 @@ const projects = [
 
 export default function SelectedWorks() {
   return (
-   <section id="selectedworks" className="min-h-screen pt-32">
+   <section id="selectedworks" className="section-surface w-full min-h-screen text-white">
+      <div className="section-inner py-24 md:py-32">
 
       {/* Section Title */}
-      <div className="text-center mb-32">
-        <h2 className="text-5xl md:text-7xl font-bold tracking-wide">
-          SELECTED WORKS
+      <div className="text-center mb-10">
+        <h2 className="text-3xl md:text-3xl font-extrabold tracking-wide">
+          {/* SELECTED WORKS */}
+          Products
         </h2>
-        <div className="w-24 h-[2px] bg-[#39FF14] mx-auto mt-6"></div>
+        <div className="w-24 h-0.5 bg-[var(--accent-primary)] mx-auto mt-6"></div>
       </div>
 
-      <div className="space-y-40">
+      <div className="space-y-[75px]">
 
         {projects.map((project, index) => {
 
@@ -68,13 +70,13 @@ export default function SelectedWorks() {
       className="w-full h-full object-cover transform group-hover:scale-105 transition duration-700"
     />
 
-    <div className="absolute inset-0 bg-[#39FF14]/0 group-hover:bg-[#39FF14]/10 transition duration-500 rounded-2xl"></div>
+    <div className="absolute inset-0 bg-transparent group-hover:bg-[#F36639]/10 transition duration-500 rounded-2xl"></div>
   
   </div>
 </div>
               {/* TEXT */}
               <div className={`${isReversed ? "md:order-1 text-right" : ""}`}>
-                <h4 className="text-[#39FF14] font-semibold mb-3 tracking-widest">
+                <h4 className="text-[var(--accent-primary)] font-semibold mb-3 tracking-widest">
                   {project.tag}
                 </h4>
 
@@ -89,8 +91,8 @@ export default function SelectedWorks() {
                 <a
                   href={project.link}
                   target="_blank"
-                  className="inline-block border border-[#39FF14] text-[#39FF14] px-8 py-3 rounded-full 
-                  hover:bg-[#39FF14] hover:text-black transition duration-300 shadow-md hover:shadow-[#39FF14]/50"
+                  className="inline-block border border-[var(--accent-primary)] text-[var(--accent-primary)] px-8 py-3 rounded-full 
+                  hover:bg-[var(--accent-secondary)] hover:text-black transition duration-300 shadow-md hover:shadow-[0_0_30px_rgba(243,102,57,0.35)]"
                 >
                   View Project →
                 </a>
@@ -102,6 +104,7 @@ export default function SelectedWorks() {
 
       </div>
 
+      </div>
     </section>
   );
 }
