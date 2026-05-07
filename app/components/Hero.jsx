@@ -38,7 +38,7 @@ export default function Hero() {
 
       {/* Base Text */}
       <div className="absolute text-center leading-none select-none">
-        <h1 className="text-[13vw] font-extrabold text-white/10">DHRUV</h1>
+        <h1 className="text-[13vw] font-extrabold text-white/10 mb-10 md:mb-0 lg:mb-0">DHRUV</h1>
         <h1 className="text-[13vw] font-extrabold text-white/10 -mt-6">
           PATEL
         </h1>
@@ -61,7 +61,7 @@ export default function Hero() {
         }}
       >
         <div className="text-center leading-none select-none">
-          <h1 className="text-[13vw] font-extrabold text-[var(--accent-primary)]">
+          <h1 className="text-[13vw] font-extrabold text-[var(--accent-primary)] mb-10 md:mb-0 lg:mb-0">
             DHRUV
           </h1>
           <h1 className="text-[13vw] font-extrabold text-[var(--accent-primary)] -mt-6">

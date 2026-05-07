@@ -80,11 +80,11 @@ export default function ContactSection() {
         >
           <div className="rounded-3xl overflow-hidden border border-[var(--accent-primary)] shadow-[0_0_40px_rgba(243,102,57,0.25)]">
             {/* Replace with your own image */}
-            <img
+            {/* <img
               src="/dhruvv.jpeg"
               alt="contact visual"
               className="w-full h-full object-cover"
-            />
+            /> */}
           </div>
 
           {/* Floating glow card behind */}

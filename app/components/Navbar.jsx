@@ -122,7 +122,7 @@ export default function Navbar() {
           >
             <button 
               onClick={closeMenu}
-              className="absolute top-8 right-8 text-white/50 hover:text-white transition-colors"
+              className="absolute top-8 right-[35px] text-white/50 hover:text-white transition-colors"
             >
               <X size={32} />
             </button>
@@ -136,7 +136,7 @@ export default function Navbar() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  className="text-3xl font-light tracking-widest text-white/60 hover:text-[var(--accent-primary)] hover:tracking-[0.2em] transition-all duration-300"
+                  className="text-xl md:text-3xl lg:text-3xl font-light tracking-widest text-white/60 hover:text-[var(--accent-primary)] hover:tracking-[0.2em] transition-all duration-300"
                 >
                   {item.name}
                 </motion.a>

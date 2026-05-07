@@ -58,7 +58,7 @@ export default function Certifications() {
         <p className="text-[var(--accent-primary)] tracking-[0.4em] mb-6 text-sm">
           CONTINUOUS LEARNING
         </p>
-        <h2 className="text-6xl md:text-8xl font-extrabold">
+        <h2 className="text-4xl md:text-8xl font-extrabold">
           Certifications
         </h2>
       </div>
@@ -71,7 +71,7 @@ export default function Certifications() {
           return (
             <motion.div
               key={cert.id}
-              className="absolute w-[360px] md:w-[360px] h-[250px] 
+              className="absolute w-[330px] md:w-[360px] h-[350px] 
               rounded-3xl overflow-hidden"
               animate={
                 position === "center"
@@ -144,7 +144,7 @@ export default function Certifications() {
       </div>
 
       {/* Dots */}
-      <div className="flex justify-center gap-3 mt-16">
+      <div className="flex justify-center gap-3 mt-20">
         {certifications.map((_, index) => (
           <button
             key={index}

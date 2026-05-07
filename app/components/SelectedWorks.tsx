@@ -62,7 +62,7 @@ export default function SelectedWorks() {
     isReversed ? "md:order-2" : ""
   }`}
 >
-  <div className="w-[420px] h-[280px] overflow-hidden rounded-2xl group relative">
+  <div className="w-[300px] h-[280px] overflow-hidden rounded-2xl group relative">
     
     <img
       src={project.image}
