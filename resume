@@ -1,0 +1,73 @@
+Skills ____________________________________________________________________________________________________________
+
+•  Programming Languages: TypeScript, JavaScript (3+ years), Java, (Proficient in Advanced Algorithms, Data Structures and OOP Principles) 
+•  Frameworks & Technologies: Payload CMS, Next.js, React JS, React Native, Recoil, Redux, MERN, Prisma, Scalable High-Performance 
+    Software development
+•  Databases & Cloud: AWS, Google Cloud, Cloudflare, Firebase, Supabase, MongoDB, PostgreSQL, MySQL, GraphQL
+•  Development & Collaboration Tools: Git/Github, Docker, Redis, n8n, Agile & Scrum, Project Flow, Version Control, CI/CD, Teamwork
+•  Operating Systems & Environments: macOS, Linux, Windows
+Experience _______________________________________________________________________________________________________
+
+
+Software Development Engineer
+Prime Apps
+Ahmedabad, India
+April 2024 – Current
+
+•  Developed Efficient Algorithms for Betting application, handling spin draws, mystery box game logic, and performance-critical flows, 
+ensuring correctness, scalability, and low-latency execution for DB and APIs.
+•  Designed and implemented an AI-driven automation workflow using n8n: integrated Slack alerts, RAG, error logs, and feature prompts with Claude Code on a dedicated server to automatically analyze issues, generate fixes, create Git branches, and run in a self-healing loop (agent with ralph loop)—significantly reducing manual debugging and turnaround time.
+•  Worked on Sportsgrid.com (Web + Mobile), contributing to SSR optimization, site ranking improvements, and production stability,  resolved critical crashes in React Native apps (Android & iOS), implemented push notifications, and refactored legacy code with clean, review-friendly PRs.
+
+Independent Software Development Engineer 
+
+
+
+
+    Oct 2024 – Current
+
+• Developed UtsavInternational.com, a production-grade business website with SEO optimization, responsive UI, and cloud deployment.
+• Built  JD Lights & Automation a lights and automation business website for (live on Vercel), implementing scalable frontend architecture and handling ongoing client updates and optimizations.
+• Developing a full-stack e-commerce platform (in progress) with Razorpay payment integration, product management, and order workflows and Delivery Dashboard; deployed preview on Vercel.
+
+Software Engineering & DSA Instructor (TA Intern)
+Apna College
+Delhi, India
+June 2024 – Oct 2024
+
+•  Conducted 50+ live DSA sessions mentoring 200+ students, strengthening problem-solving and interview readiness.
+•  Debugged and optimized multiple student projects, improving runtime efficiency (~10%) and deployment stability.
+•  Guided students on advanced algorithms and CI/CD practices, resulting in measurable improvement in assessments and technical interviews.
+Projects _________________________________________________________________________________________________________
+
+Weave
+Weave 
+Technologies & Frameworks: Node.js, Express, React, WebContainers, Gemini AI
+
+•  Developed Weave - AI Web App Generator, a dynamic web platform that generates complete, deployable web applications based on  
+user prompts, delivering full folder structure, code files, live preview, and an in-browser code editor.
+•  Leveraged WebContainer for real-time code execution within the browser and Integrated LLM workflows to convert user input into 
+structured, production-ready codebases
+
+CheckMate
+ CheckMate
+Technologies & Frameworks: WebRTC, Chess.js, WebSockets, React, Node.js
+
+•  Developed Checkmate - Real-Time Chess + Video Platform
+•  Implemented using raw WebRTC for seamless peer-to-peer video streaming and WebSockets for ultra-low latency game 
+ state synchronization, supporting thousands of concurrent users.
+Education ________________________________________________________________________________________________________
+
+
+Bachelor of Technology (BTech)
+  Silver Oak University
+                          Graduate 2024
+
+•  Silver Oak University, Ahmedabad, Gujarat | Computer Science Engineering | CGPA : 9.28 
+•  Relevant Coursework: Data Structures & Algorithms, Object-Oriented Programming System (OOPs), Software Engineering  
+ Principles, Database Management Systems (DBMS), Operating System, Computer Networks and Engineering Mathematics.
+•  Honors: Top 5% of the class, achieving a CGPA of 9.28  
+Achievements & Certifications _____________________________________________________________________________________
+
+•  Solved 450+ data structure and algorithmic problems on Leetcode and Hackerrank.
+•  Achieved 25th Rank in Institute on GeeksforGeeks.

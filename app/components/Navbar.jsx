@@ -1,3 +1,4 @@
+"use client";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence, useScroll, useSpring } from "motion/react";
 import { Menu, X, ChevronRight } from "lucide-react";
@@ -41,7 +42,7 @@ export default function Navbar() {
         initial={{ y: -90, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ type: "spring", duration: 0.001, easeOut: [0.16, 1, 0.9, 1] }}
-        className={`fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-7xl px-6 py-4 transition-all duration-500 rounded-full border border-white/5 ${
+        className={`fixed top-3 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-7xl px-6 py-4 transition-all duration-500 rounded-full border border-white/5 ${
           isScrolled 
             ? "bg-transparent backdrop-blur-xl border-white/10 py-3 shadow-[0_8px_32px_rgba(0,0,0,0.5)]" 
             : "bg-transparent backdrop-blur-md"
@@ -156,9 +157,9 @@ export default function Navbar() {
             </div>
 
             {/* Decorative background numbers or words */}
-            <div className="absolute bottom-10 left-10 text-white/5 font-bold text-9xl pointer-events-none select-none">
+            {/* <div className="absolute bottom-10 left-10 text-white/5 font-bold text-9xl pointer-events-none select-none">
               MENU
-            </div>
+            </div> */}
           </motion.div>
         )}
       </AnimatePresence>

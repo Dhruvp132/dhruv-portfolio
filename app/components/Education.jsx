@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 
-export default function Education() {
+export default function Education2() {
   return (
     <section id="education" className="section-surface min-h-screen w-full text-white">
       <div className="section-inner relative py-24 md:py-32">
@@ -52,8 +52,7 @@ export default function Education() {
 
         {/* Center Dot 1 */}
         <div
-          className="absolute left-1/2 -translate-x-1/2 top-[260px] 
-        w-6 h-6 rounded-full bg-[var(--accent-primary)] shadow-[0_0_15px_rgba(243,102,57,0.4)]"
+          className="absolute left-1/2 -translate-x-1/2 top-[260px] w-0 h-0 md:w-6 md:h-6 rounded-full bg-[var(--accent-primary)] shadow-[0_0_15px_rgba(243,102,57,0.4)]"
         ></div>
 
         {/* Entry 2 - RIGHT */}
@@ -83,8 +82,7 @@ export default function Education() {
 
         {/* Center Dot 2 */}
         <div
-          className="absolute left-1/2 -translate-x-1/2 top-[600px] 
-        w-6 h-6 rounded-full bg-[var(--accent-primary)] shadow-[0_0_15px_rgba(243,102,57,0.4)]"
+          className="absolute left-1/2 -translate-x-1/2 top-[600px] w-0 h-0 md:w-6 md:h-6 rounded-full bg-[var(--accent-primary)] shadow-[0_0_15px_rgba(243,102,57,0.4)]"
         ></div>
       </div>
       </div>

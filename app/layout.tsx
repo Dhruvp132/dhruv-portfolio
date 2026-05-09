@@ -33,7 +33,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} ${pacifico.variable} antialiased md:max-width-xl mx-auto flex-wrap text-wrap md:px-40 bg-black`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} ${pacifico.variable} antialiased md:max-w-xl mx-auto flex-wrap text-wrap md:px-40 bg-black`}>
         {/* <CursorEffect /> */}
         <div className="">
           <DotFieldBackground />

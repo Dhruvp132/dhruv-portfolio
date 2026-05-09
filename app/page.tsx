@@ -1,5 +1,8 @@
 import Hero from "./components/Hero"
-import Overview from "./components/Overview"
+import Navbar from "./components/Navbar"
+import Overview from "./components/Overview1"
+import Overview2 from "./components/Overview"
+import Experience from "./components/Experience"
 import Education from "./components/Education"
 import SelectedWorks from "./components/SelectedWorks";
 import Certifications from "./components/Certifications";
@@ -7,6 +10,7 @@ import ProjectsGrid, { type Project } from "./components/ProjectsGrid";
 import ContactSection from "./components/ContactSection";
 import { TechStackBadges } from "./components/Skills";
 import FreelanceProjects from "./components/FreelanceProjects";
+
 
 const projects: Project[] = [
   {
@@ -69,293 +73,15 @@ const projects: Project[] = [
       { label: "Visualization" },
     ],
   },
-  {
-    id: "algoviz",
-    title: "AlgoViz",
-    date: "2024",
-    icon: "03",
-    liveUrl: "https://algoviz-dhruv.vercel.app/",
-    description:
-      "Interactive algorithm visualizer for core sorting and graph algorithms with clear step-by-step visual feedback.",
-    features: [
-      { text: "Pathfinding demos for Dijkstra, DFS, and BFS." },
-      { text: "Sorting demos for Merge, Quick, and Bubble sort." },
-      { text: "Real-time animation controls for educational pacing." },
-    ],
-    tags: [
-      { label: "React" },
-      { label: "JavaScript" },
-      { label: "Algorithms" },
-      { label: "Visualization" },
-    ],
-  },
-  {
-    id: "algoviz",
-    title: "AlgoViz",
-    date: "2024",
-    icon: "03",
-    liveUrl: "https://algoviz-dhruv.vercel.app/",
-    description:
-      "Interactive algorithm visualizer for core sorting and graph algorithms with clear step-by-step visual feedback.",
-    features: [
-      { text: "Pathfinding demos for Dijkstra, DFS, and BFS." },
-      { text: "Sorting demos for Merge, Quick, and Bubble sort." },
-      { text: "Real-time animation controls for educational pacing." },
-    ],
-    tags: [
-      { label: "React" },
-      { label: "JavaScript" },
-      { label: "Algorithms" },
-      { label: "Visualization" },
-    ],
-  },
-  {
-    id: "algoviz",
-    title: "AlgoViz",
-    date: "2024",
-    icon: "03",
-    liveUrl: "https://algoviz-dhruv.vercel.app/",
-    description:
-      "Interactive algorithm visualizer for core sorting and graph algorithms with clear step-by-step visual feedback.",
-    features: [
-      { text: "Pathfinding demos for Dijkstra, DFS, and BFS." },
-      { text: "Sorting demos for Merge, Quick, and Bubble sort." },
-      { text: "Real-time animation controls for educational pacing." },
-    ],
-    tags: [
-      { label: "React" },
-      { label: "JavaScript" },
-      { label: "Algorithms" },
-      { label: "Visualization" },
-    ],
-  },
-  {
-    id: "algoviz",
-    title: "AlgoViz",
-    date: "2024",
-    icon: "03",
-    liveUrl: "https://algoviz-dhruv.vercel.app/",
-    description:
-      "Interactive algorithm visualizer for core sorting and graph algorithms with clear step-by-step visual feedback.",
-    features: [
-      { text: "Pathfinding demos for Dijkstra, DFS, and BFS." },
-      { text: "Sorting demos for Merge, Quick, and Bubble sort." },
-      { text: "Real-time animation controls for educational pacing." },
-    ],
-    tags: [
-      { label: "React" },
-      { label: "JavaScript" },
-      { label: "Algorithms" },
-      { label: "Visualization" },
-    ],
-  },
-  {
-    id: "algoviz",
-    title: "AlgoViz",
-    date: "2024",
-    icon: "03",
-    liveUrl: "https://algoviz-dhruv.vercel.app/",
-    description:
-      "Interactive algorithm visualizer for core sorting and graph algorithms with clear step-by-step visual feedback.",
-    features: [
-      { text: "Pathfinding demos for Dijkstra, DFS, and BFS." },
-      { text: "Sorting demos for Merge, Quick, and Bubble sort." },
-      { text: "Real-time animation controls for educational pacing." },
-    ],
-    tags: [
-      { label: "React" },
-      { label: "JavaScript" },
-      { label: "Algorithms" },
-      { label: "Visualization" },
-    ],
-  },
-  {
-    id: "algoviz",
-    title: "AlgoViz",
-    date: "2024",
-    icon: "03",
-    liveUrl: "https://algoviz-dhruv.vercel.app/",
-    description:
-      "Interactive algorithm visualizer for core sorting and graph algorithms with clear step-by-step visual feedback.",
-    features: [
-      { text: "Pathfinding demos for Dijkstra, DFS, and BFS." },
-      { text: "Sorting demos for Merge, Quick, and Bubble sort." },
-      { text: "Real-time animation controls for educational pacing." },
-    ],
-    tags: [
-      { label: "React" },
-      { label: "JavaScript" },
-      { label: "Algorithms" },
-      { label: "Visualization" },
-    ],
-  },
-  {
-    id: "algoviz",
-    title: "AlgoViz",
-    date: "2024",
-    icon: "03",
-    liveUrl: "https://algoviz-dhruv.vercel.app/",
-    description:
-      "Interactive algorithm visualizer for core sorting and graph algorithms with clear step-by-step visual feedback.",
-    features: [
-      { text: "Pathfinding demos for Dijkstra, DFS, and BFS." },
-      { text: "Sorting demos for Merge, Quick, and Bubble sort." },
-      { text: "Real-time animation controls for educational pacing." },
-    ],
-    tags: [
-      { label: "React" },
-      { label: "JavaScript" },
-      { label: "Algorithms" },
-      { label: "Visualization" },
-    ],
-  },
-  {
-    id: "algoviz",
-    title: "AlgoViz",
-    date: "2024",
-    icon: "03",
-    liveUrl: "https://algoviz-dhruv.vercel.app/",
-    description:
-      "Interactive algorithm visualizer for core sorting and graph algorithms with clear step-by-step visual feedback.",
-    features: [
-      { text: "Pathfinding demos for Dijkstra, DFS, and BFS." },
-      { text: "Sorting demos for Merge, Quick, and Bubble sort." },
-      { text: "Real-time animation controls for educational pacing." },
-    ],
-    tags: [
-      { label: "React" },
-      { label: "JavaScript" },
-      { label: "Algorithms" },
-      { label: "Visualization" },
-    ],
-  },
-  {
-    id: "algoviz",
-    title: "AlgoViz",
-    date: "2024",
-    icon: "03",
-    liveUrl: "https://algoviz-dhruv.vercel.app/",
-    description:
-      "Interactive algorithm visualizer for core sorting and graph algorithms with clear step-by-step visual feedback.",
-    features: [
-      { text: "Pathfinding demos for Dijkstra, DFS, and BFS." },
-      { text: "Sorting demos for Merge, Quick, and Bubble sort." },
-      { text: "Real-time animation controls for educational pacing." },
-    ],
-    tags: [
-      { label: "React" },
-      { label: "JavaScript" },
-      { label: "Algorithms" },
-      { label: "Visualization" },
-    ],
-  },
-  {
-    id: "algoviz",
-    title: "AlgoViz",
-    date: "2024",
-    icon: "03",
-    liveUrl: "https://algoviz-dhruv.vercel.app/",
-    description:
-      "Interactive algorithm visualizer for core sorting and graph algorithms with clear step-by-step visual feedback.",
-    features: [
-      { text: "Pathfinding demos for Dijkstra, DFS, and BFS." },
-      { text: "Sorting demos for Merge, Quick, and Bubble sort." },
-      { text: "Real-time animation controls for educational pacing." },
-    ],
-    tags: [
-      { label: "React" },
-      { label: "JavaScript" },
-      { label: "Algorithms" },
-      { label: "Visualization" },
-    ],
-  },
-  {
-    id: "algoviz",
-    title: "AlgoViz",
-    date: "2024",
-    icon: "03",
-    liveUrl: "https://algoviz-dhruv.vercel.app/",
-    description:
-      "Interactive algorithm visualizer for core sorting and graph algorithms with clear step-by-step visual feedback.",
-    features: [
-      { text: "Pathfinding demos for Dijkstra, DFS, and BFS." },
-      { text: "Sorting demos for Merge, Quick, and Bubble sort." },
-      { text: "Real-time animation controls for educational pacing." },
-    ],
-    tags: [
-      { label: "React" },
-      { label: "JavaScript" },
-      { label: "Algorithms" },
-      { label: "Visualization" },
-    ],
-  },
-  {
-    id: "algoviz",
-    title: "AlgoViz",
-    date: "2024",
-    icon: "03",
-    liveUrl: "https://algoviz-dhruv.vercel.app/",
-    description:
-      "Interactive algorithm visualizer for core sorting and graph algorithms with clear step-by-step visual feedback.",
-    features: [
-      { text: "Pathfinding demos for Dijkstra, DFS, and BFS." },
-      { text: "Sorting demos for Merge, Quick, and Bubble sort." },
-      { text: "Real-time animation controls for educational pacing." },
-    ],
-    tags: [
-      { label: "React" },
-      { label: "JavaScript" },
-      { label: "Algorithms" },
-      { label: "Visualization" },
-    ],
-  },
-  {
-    id: "algoviz",
-    title: "AlgoViz",
-    date: "2024",
-    icon: "03",
-    liveUrl: "https://algoviz-dhruv.vercel.app/",
-    description:
-      "Interactive algorithm visualizer for core sorting and graph algorithms with clear step-by-step visual feedback.",
-    features: [
-      { text: "Pathfinding demos for Dijkstra, DFS, and BFS." },
-      { text: "Sorting demos for Merge, Quick, and Bubble sort." },
-      { text: "Real-time animation controls for educational pacing." },
-    ],
-    tags: [
-      { label: "React" },
-      { label: "JavaScript" },
-      { label: "Algorithms" },
-      { label: "Visualization" },
-    ],
-  },
-  {
-    id: "algoviz",
-    title: "AlgoViz",
-    date: "2024",
-    icon: "03",
-    liveUrl: "https://algoviz-dhruv.vercel.app/",
-    description:
-      "Interactive algorithm visualizer for core sorting and graph algorithms with clear step-by-step visual feedback.",
-    features: [
-      { text: "Pathfinding demos for Dijkstra, DFS, and BFS." },
-      { text: "Sorting demos for Merge, Quick, and Bubble sort." },
-      { text: "Real-time animation controls for educational pacing." },
-    ],
-    tags: [
-      { label: "React" },
-      { label: "JavaScript" },
-      { label: "Algorithms" },
-      { label: "Visualization" },
-    ],
-  },
 ];
 
 export default function Home() {
   return (
     <main className="flex flex-col text-wrap">
+      <Navbar />
       <Hero />
       <Overview />
+      <Overview2 />
       <FreelanceProjects />
       <section id="skills" className="section-surface w-full py-24 text-white">
         <div className="section-inner">

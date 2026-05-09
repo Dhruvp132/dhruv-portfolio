@@ -3,9 +3,12 @@ import { motion, AnimatePresence } from "motion/react";
 import { ExternalLink, Github, ArrowRight, ChevronDown } from "lucide-react";
 import { useEffect, useState } from "react";
 
+type CategoryId = "all" | "automation-business" | "agri-export" | "e-commerce";
+
 interface Project {
   id: string;
   title: string;
+  filter: Exclude<CategoryId, "all">;
   category: string;
   description: string;
   tags: string[];
@@ -18,6 +21,7 @@ const PROJECTS: Project[] = [
   {
     id: "01",
     title: "Aura Luxury Real Estate",
+    filter: "automation-business",
     category: "Full Stack Development",
     description: "A high-end property discovery platform featuring real-time bidding, immersive 3D tours, and AI-driven valuation models.",
     tags: ["React", "Node.js", "Three.js", "PostgreSQL"],
@@ -28,6 +32,7 @@ const PROJECTS: Project[] = [
   {
     id: "02",
     title: "Vanguard Trading Terminal",
+    filter: "agri-export",
     category: "Fintech Interface",
     description: "A sophisticated desktop-class web application for institutional traders with microsecond data precision and complex charting.",
     tags: ["TypeScript", "WebSockets", "D3.js", "Redis"],
@@ -37,6 +42,7 @@ const PROJECTS: Project[] = [
   {
     id: "03",
     title: "Onyx E-commerce",
+    filter: "e-commerce",
     category: "Modern Retail",
     description: "Minimalist fashion platform with seamless transitions and a heavy focus on cinematic storytelling through product photography.",
     tags: ["Next.js", "Framer Motion", "Stripe", "GraphQL"],
@@ -46,6 +52,7 @@ const PROJECTS: Project[] = [
   {
     id: "04",
     title: "NeuroLink AI Dashboard",
+    filter: "automation-business",
     category: "Artificial Intelligence",
     description: "Visualizing complex neural networks and high-dimensional data in an interactive 3D space.",
     tags: ["Python", "TensorFlow", "React", "WebGL"],
@@ -54,10 +61,15 @@ const PROJECTS: Project[] = [
   }
 ];
 
-const CATEGORIES = ["All", "Full Stack", "Fintech", "Retail", "AI"];
+const CATEGORIES: Array<{ id: CategoryId; label: string }> = [
+  { id: "all", label: "All" },
+  { id: "automation-business", label: "Automation Business" },
+  { id: "agri-export", label: "Agri Export" },
+  { id: "e-commerce", label: "E-commerce" },
+];
 
 export default function FreelanceProjects() {
-  const [activeFilter, setActiveFilter] = useState("All");
+  const [activeFilter, setActiveFilter] = useState<CategoryId>("all");
   const [expandedId, setExpandedId] = useState<string | null>(null);
   const [featuredId, setFeaturedId] = useState(PROJECTS[0].id);
   const [isCompactLayout, setIsCompactLayout] = useState(false);
@@ -85,19 +97,34 @@ export default function FreelanceProjects() {
       return;
     }
 
-    if (activeFilter === "All") {
+    if (activeFilter === "all") {
       setFeaturedId(projectId);
     }
   };
 
+  const handleFilterChange = (nextFilter: CategoryId) => {
+    setActiveFilter(nextFilter);
+    setExpandedId(null);
+
+    if (nextFilter === "all") {
+      return;
+    }
+
+    const nextFeaturedProject = PROJECTS.find((project) => project.filter === nextFilter);
+
+    if (nextFeaturedProject) {
+      setFeaturedId(nextFeaturedProject.id);
+    }
+  };
+
   const filteredProjects = PROJECTS.filter(project => {
-    if (activeFilter === "All") return true;
-    return project.category.toLowerCase().includes(activeFilter.toLowerCase());
+    if (activeFilter === "all") return true;
+    return project.filter === activeFilter;
   });
 
   const featuredProject = filteredProjects.find((project) => project.id === featuredId) ?? filteredProjects[0];
   const displayedProjects =
-    !isCompactLayout && activeFilter === "All" && featuredProject
+    !isCompactLayout && activeFilter === "all" && featuredProject
       ? [featuredProject, ...filteredProjects.filter((project) => project.id !== featuredProject.id)]
       : filteredProjects;
 
@@ -143,20 +170,20 @@ export default function FreelanceProjects() {
           <div className="flex shrink-0 bg-white/5 p-1 rounded-full border border-white/10 backdrop-blur-md">
             {CATEGORIES.map((cat) => (
               <button
-                key={cat}
-                onClick={() => setActiveFilter(cat)}
+                key={cat.id}
+                onClick={() => handleFilterChange(cat.id)}
                 className={`relative px-4 lg:px-6 py-2 rounded-full text-[9px] lg:text-[10px] font-bold uppercase tracking-widest transition-all duration-300 ${
-                  activeFilter === cat ? "text-white" : "text-white/40 hover:text-white/60"
+                  activeFilter === cat.id ? "text-white" : "text-white/40 hover:text-white/60"
                 }`}
               >
-                {activeFilter === cat && (
+                {activeFilter === cat.id && (
                   <motion.div
                     layoutId="activeFilter"
                     className="absolute inset-0 bg-[var(--accent-primary)] rounded-full -z-10"
                     transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                   />
                 )}
-                {cat}
+                {cat.label}
               </button>
             ))}
           </div>
@@ -171,13 +198,13 @@ export default function FreelanceProjects() {
         <motion.div 
           layout
           transition={cardSpring}
-          className="grid grid-cols-1 lg:grid-cols-12 gap-6"
+          className="relative grid grid-cols-1 lg:grid-cols-12 gap-6"
         >
           <AnimatePresence mode="popLayout" initial={false}>
             {displayedProjects.map((project, index) => {
-              const isFeatured = !isCompactLayout && activeFilter === "All" && index === 0;
+              const isFeatured = !isCompactLayout && activeFilter === "all" && index === 0;
               const isExpanded = expandedId === project.id;
-              const isInteractive = isCompactLayout || (activeFilter === "All" && index > 0);
+              const isInteractive = isCompactLayout || (activeFilter === "all" && index > 0);
 
               return (
                 <motion.div
@@ -188,6 +215,7 @@ export default function FreelanceProjects() {
                   exit={{ opacity: 0, scale: 0.9 }}
                   transition={cardSpring}
                   className={`${isFeatured ? "lg:col-span-8" : "lg:col-span-4"} group ${isInteractive ? "cursor-pointer" : ""}`}
+                  onMouseDown={isInteractive ? (event) => event.preventDefault() : undefined}
                   onClick={isInteractive ? () => handleCardClick(project.id) : undefined}
                   onKeyDown={
                     isInteractive

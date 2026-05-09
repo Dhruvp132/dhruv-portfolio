@@ -8,18 +8,23 @@ import { MapPin, Phone, Mail, Link2, ArrowUpRight } from "lucide-react";
 const infoItems = [
   { icon: MapPin, label: "Ahmedabad, India", sublabel: "Location" },
   { icon: Phone, label: "+91-958 948 2345", sublabel: "Mobile" },
-  { icon: Mail, label: "dhruvpatel13210@gmail.com", sublabel: "Email" },
+  {
+    icon: Mail,
+    label: "dhruvpatel13210@gmail.com",
+    sublabel: "Email",
+    valueClassName: "break-words",
+  },
   {
     icon: Link2,
-    label: "dhruvpatel.com",
-    sublabel: "Portfolio",
+    label: "dhruvpatel1310",
+    sublabel: "Linkedin",
     color: "text-[var(--accent-primary)]",
   },
 ];
 
 const socialLinks = [
   { name: "GitHub", url: "https://github.com/Dhruvp132" },
-  { name: "LinkedIn", url: "https://linkedin.com" },
+  { name: "LinkedIn", url: "https://www.linkedin.com/in/dhruvpatel1310/" },
   { name: "X (Twitter)", url: "#" },
   { name: "Discord", url: "#" },
 ];
@@ -71,12 +76,12 @@ export default function Overview() {
 
   return (
     <section id="overview" className="z-5 section-surface w-full text-white">
-      <div className="section-inner py-16 md:py-24">
+      <div className="section-inner pb-16 md:pb-24">
         <motion.nav
           initial={{ opacity: 0, y: -10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-6 flex items-center justify-between px-1"
+          className="mb-2 flex items-center justify-between px-1"
         >
           <div className="flex items-center gap-2">
             <div className="h-2 w-2 rounded-full bg-[var(--accent-primary)]" />
@@ -151,15 +156,17 @@ export default function Overview() {
 
             <div className="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-2">
               {infoItems.map((info) => (
-                <div key={info.sublabel} className="group flex items-center gap-3">
-                  <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-zinc-800/50 text-zinc-400 transition-all duration-300 group-hover:bg-zinc-800 group-hover:text-[var(--accent-primary)]">
+                <div key={info.sublabel} className="group flex min-w-0 items-center gap-3">
+                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-zinc-800/50 text-zinc-400 transition-all duration-300 group-hover:bg-zinc-800 group-hover:text-[var(--accent-primary)]">
                     <info.icon size={16} />
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <p className="mb-0.5 text-[8px] font-bold uppercase tracking-widest text-zinc-500">
                       {info.sublabel}
                     </p>
-                    <p className={`text-xs font-semibold ${info.color || "text-white"}`}>
+                    <p
+                      className={`min-w-0 text-xs font-semibold ${info.color || "text-white"} ${info.valueClassName || ""}`}
+                    >
                       {info.label}
                     </p>
                   </div>

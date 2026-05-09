@@ -17,13 +17,13 @@ const projects = [
     link: "https://github.com/Dhruvp132/Muzique",
     image: "/music.jpg"
   },
-  {
-    tag: "EDUCATIONAL TOOL",
-    title: "AlgoViz",
-    desc: "Interactive visualization tool for sorting & pathfinding algorithms with real-time feedback.",
-    link: "https://algoviz-dhruv.vercel.app/",
-    image: "/algo.jpg"
-  }
+  // {
+  //   tag: "EDUCATIONAL TOOL",
+  //   title: "AlgoViz",
+  //   desc: "Interactive visualization tool for sorting & pathfinding algorithms with real-time feedback.",
+  //   link: "https://algoviz-dhruv.vercel.app/",
+  //   image: "/algo.jpg"
+  // }
 ];
 
 export default function SelectedWorks() {
