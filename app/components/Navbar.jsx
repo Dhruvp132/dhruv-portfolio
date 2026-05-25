@@ -53,7 +53,7 @@ export default function Navbar() {
             </span>
             <div className="h-px w-0 group-hover:w-full bg-[var(--accent-primary)] transition-all duration-300" />
             <span className="text-[10px] uppercase tracking-[0.3em] font-medium text-white/40 mt-0.5">
-              Product Systems
+              Product Engineer
             </span>
           </div>
 
