@@ -1,7 +1,9 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import Tooltip from "./Tooltip";
 
 const certifications = [
   {
@@ -50,29 +52,28 @@ export default function Certifications() {
   return (
     <section
       id="certifications"
-      className="section-surface w-full overflow-hidden py-40 pt-32 text-white"
+      className="section-surface w-full overflow-hidden py-24 text-white md:py-32"
     >
       <div className="section-inner-wide">
       {/* Heading */}
-      <div className="text-center mb-24">
-        <p className="text-[var(--accent-primary)] tracking-[0.4em] mb-6 text-sm">
+      <div className="mb-16 text-center md:mb-20">
+        <p className="mb-5 text-xs tracking-[0.4em] text-[var(--accent-primary)]">
           CONTINUOUS LEARNING
         </p>
-        <h2 className="text-4xl md:text-8xl font-extrabold">
+        <h2 className="mb-4 text-3xl font-extrabold md:text-4xl">
           Certifications
         </h2>
       </div>
 
       {/* Cards */}
-      <div className="relative flex justify-center items-center h-[200px] perspective-[1200px]">
+      <div className="relative flex h-[200px] items-center justify-center perspective-[1200px]">
         {certifications.map((cert, index) => {
           const position = getPosition(index);
 
           return (
             <motion.div
               key={cert.id}
-              className="absolute w-[330px] md:w-[360px] h-[350px] 
-              rounded-3xl overflow-hidden"
+              className="absolute h-[350px] w-[330px] overflow-hidden rounded-3xl border border-white/10 md:w-[360px]"
               animate={
                 position === "center"
                   ? {
@@ -102,23 +103,25 @@ export default function Certifications() {
               transition={{ duration: 0.8, ease: "easeInOut" }}
             >
               {/* FULL CLEAR BACKGROUND IMAGE */}
-              <img
+              <Image
                 src={cert.image}
                 alt={cert.org}
-                className="absolute inset-0 w-full h-full object-cover"
+                fill
+                sizes="(min-width: 768px) 360px, 330px"
+                className="object-cover"
               />
 
               {/* LIGHT GRADIENT FOR TEXT READABILITY */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
 
               {/* CONTENT */}
-              <div className="relative z-10 p-10 flex flex-col justify-end h-full">
+              <div className="relative z-10 flex h-full flex-col justify-end p-8 md:p-10">
 
-                <p className="text-[var(--accent-primary)] text-md font-semibold mb-2">
+                <p className="mb-2 text-sm font-semibold text-[var(--accent-primary)]">
                   {cert.org}
                 </p>
 
-                <h3 className="text-2xl md:text-xl font-bold mb-4">
+                <h3 className="mb-4 text-xl font-bold md:text-xl">
                   {cert.title}
                 </h3>
 
@@ -130,12 +133,10 @@ export default function Certifications() {
                   href={cert.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block px-6 py-2 border bg-white border-[var(--accent-primary)] 
-                  rounded-full text-[var(--accent-primary)] 
-                  hover:bg-[var(--accent-secondary)] hover:text-black 
-                  transition duration-300 w-fit"
+                  className="group inline-flex w-fit items-center gap-2 rounded-full border border-[var(--accent-primary)] bg-white px-5 py-2 text-xs font-bold uppercase tracking-[0.16em] text-[var(--accent-primary)] transition duration-300 hover:-translate-y-0.5 hover:bg-[var(--accent-secondary)] hover:text-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-primary)]/70 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
                 >
-                  View Credential →
+                  View Credential
+                  <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
                 </a>
               </div>
             </motion.div>
@@ -144,17 +145,19 @@ export default function Certifications() {
       </div>
 
       {/* Dots */}
-      <div className="flex justify-center gap-3 mt-20">
-        {certifications.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setActive(index)}
-            className={`h-2 rounded-full transition-all duration-300 ${
-              active === index
-                ? "w-6 bg-[var(--accent-primary)]"
-                : "w-2 bg-neutral-600"
-            }`}
-          />
+      <div className="mt-16 flex justify-center gap-3">
+        {certifications.map((cert, index) => (
+          <Tooltip key={cert.id} content={`Show ${cert.title}`}>
+            <button
+              onClick={() => setActive(index)}
+              aria-label={`Show ${cert.title}`}
+              className={`h-2 rounded-full transition-all duration-300 ${
+                active === index
+                  ? "w-6 bg-[var(--accent-primary)]"
+                  : "w-2 bg-neutral-600 hover:bg-neutral-400"
+              } focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-primary)]/70 focus-visible:ring-offset-2 focus-visible:ring-offset-black`}
+            />
+          </Tooltip>
         ))}
       </div>
       </div>

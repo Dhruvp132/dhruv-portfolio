@@ -2,6 +2,7 @@
 import { motion, AnimatePresence } from "motion/react";
 import { ExternalLink, Github, ArrowRight, ChevronDown } from "lucide-react";
 import { useEffect, useState } from "react";
+import Tooltip from "./Tooltip";
 
 type CategoryId = "all" | "automation-business" | "agri-export" | "e-commerce";
 
@@ -11,6 +12,7 @@ interface Project {
   filter: Exclude<CategoryId, "all">;
   category: string;
   description: string;
+  casePoints: string[];
   tags: string[];
   image: string;
   link?: string;
@@ -20,52 +22,56 @@ interface Project {
 const PROJECTS: Project[] = [
   {
     id: "01",
-    title: "Aura Luxury Real Estate",
-    filter: "automation-business",
-    category: "Full Stack Development",
-    description: "A high-end property discovery platform featuring real-time bidding, immersive 3D tours, and AI-driven valuation models.",
-    tags: ["React", "Node.js", "Three.js", "PostgreSQL"],
-    image: "https://images.unsplash.com/photo-1600585154340-be6199f7e009?q=80&w=2070&auto=format&fit=crop",
-    link: "#",
-    github: "#"
+    title: "Utsav International",
+    filter: "agri-export",
+    category: "Export Business System",
+    description: "Engineered a credibility-first digital presence for an agri-export business with SEO-ready pages, fast responsive product presentation, and production deployment.",
+    casePoints: [
+      "Problem: Buyers needed a clearer way to evaluate products, trust signals, and company capability.",
+      "System: Built a high-performance business website structured around product discovery and inquiry flow.",
+      "Impact: Improved online credibility, search readiness, and mobile browsing quality for international prospects.",
+    ],
+    tags: ["Next.js", "TypeScript", "SEO", "Vercel"],
+    image: "/freelance/utsav-international.png",
+    link: "#contact",
   },
   {
     id: "02",
-    title: "Vanguard Trading Terminal",
-    filter: "agri-export",
-    category: "Fintech Interface",
-    description: "A sophisticated desktop-class web application for institutional traders with microsecond data precision and complex charting.",
-    tags: ["TypeScript", "WebSockets", "D3.js", "Redis"],
-    image: "https://images.unsplash.com/photo-1611974715853-26d30b65672a?q=80&w=2070&auto=format&fit=crop",
-    link: "#"
+    title: "JD Lights & Automation",
+    filter: "automation-business",
+    category: "Automation Business System",
+    description: "Built and maintain a scalable web system for a lights and automation business with fast-loading pages, responsive UX, and ongoing client-driven improvements.",
+    casePoints: [
+      "Problem: The business needed a polished product and service surface that could evolve with new offerings.",
+      "System: Delivered a modular frontend architecture with clean content sections and production deployment.",
+      "Impact: Created a maintainable digital system for sales conversations, updates, and long-term growth.",
+    ],
+    tags: ["TypeScript", "Next.js", "Vercel"],
+    image: "/freelance/jd.png",
+    link: "#contact",
   },
   {
     id: "03",
-    title: "Onyx E-commerce",
+    title: "Colt & Co.",
     filter: "e-commerce",
-    category: "Modern Retail",
-    description: "Minimalist fashion platform with seamless transitions and a heavy focus on cinematic storytelling through product photography.",
-    tags: ["Next.js", "Framer Motion", "Stripe", "GraphQL"],
-    image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2070&auto=format&fit=crop",
-    link: "#"
+    category: "Commerce Platform",
+    description: "Developing a production-ready commerce platform with Razorpay payments, product and order management, delivery workflows, and modern deployment pipelines.",
+    casePoints: [
+      "Problem: The brand needs a commerce backend that supports selling, fulfillment, and operational visibility.",
+      "System: Designing product, order, payment, and delivery flows around scalable admin workflows.",
+      "Impact: Moving the business from a simple storefront toward a managed commerce operating system.",
+    ],
+    tags: ["Next.js", "TypeScript", "MongoDB", "Razorpay"],
+    image: "/freelance/coltnco.png",
+    link: "#contact",
   },
-  {
-    id: "04",
-    title: "NeuroLink AI Dashboard",
-    filter: "automation-business",
-    category: "Artificial Intelligence",
-    description: "Visualizing complex neural networks and high-dimensional data in an interactive 3D space.",
-    tags: ["Python", "TensorFlow", "React", "WebGL"],
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2070&auto=format&fit=crop",
-    link: "#"
-  }
 ];
 
 const CATEGORIES: Array<{ id: CategoryId; label: string }> = [
   { id: "all", label: "All" },
-  { id: "automation-business", label: "Automation Business" },
+  { id: "automation-business", label: "Automation" },
   { id: "agri-export", label: "Agri Export" },
-  { id: "e-commerce", label: "E-commerce" },
+  { id: "e-commerce", label: "Commerce" },
 ];
 
 export default function FreelanceProjects() {
@@ -129,50 +135,51 @@ export default function FreelanceProjects() {
       : filteredProjects;
 
   return (
-    <section id="projects" className="py-12 lg:py-24 relative overflow-hidden">
+    <section id="projects" className="relative overflow-hidden py-16 md:py-20 lg:py-24">
       <div className="section-inner">
         {/* Header */}
-        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-12 gap-8">
+        <div className="mb-10 flex flex-col items-start justify-between gap-6 lg:mb-12 lg:flex-row lg:items-end">
           <div className="max-w-2xl">
-            <motion.span 
+            <motion.span
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               className="text-[var(--accent-primary)] text-[10px] lg:text-xs font-bold uppercase tracking-[0.4em] mb-4 block"
             >
-              Selected Portfolio
+              Selected Case Studies
             </motion.span>
-            <motion.h2 
+            <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight text-white leading-[0.9]"
+              className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[0.94]"
             >
-              FREELANCE <br />
-              <span className="text-white/20">MASTERPIECES</span>
+              BUSINESS SYSTEMS <br />
+              <span className="text-white/20">ENGINEERED TO SCALE</span>
             </motion.h2>
           </div>
-          
-          <motion.p 
+
+          <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4 }}
             className="text-white/40 text-sm max-w-xs leading-relaxed"
           >
-            A collection of highly bespoke digital solutions crafted for ambitious clients across the globe.
+            Client work packaged as business problems, engineered systems, architecture decisions, and practical outcomes.
           </motion.p>
         </div>
 
         {/* Sub-Navbar (Filters) */}
-        <div className="mb-12 flex flex-wrap gap-4 items-center border-b border-white/5 pb-8 overflow-x-auto lg:overflow-visible">
+        <div className="mb-10 flex flex-wrap items-center gap-4 overflow-x-auto border-b border-white/5 pb-6 lg:mb-12 lg:overflow-visible">
           <div className="flex shrink-0 bg-white/5 p-1 rounded-full border border-white/10 backdrop-blur-md">
             {CATEGORIES.map((cat) => (
               <button
                 key={cat.id}
                 onClick={() => handleFilterChange(cat.id)}
-                className={`relative px-4 lg:px-6 py-2 rounded-full text-[9px] lg:text-[10px] font-bold uppercase tracking-widest transition-all duration-300 ${
+                aria-pressed={activeFilter === cat.id}
+                className={`relative px-4 lg:px-6 py-2 rounded-full text-[9px] lg:text-[10px] font-bold uppercase tracking-widest transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-primary)]/60 ${
                   activeFilter === cat.id ? "text-white" : "text-white/40 hover:text-white/60"
                 }`}
               >
@@ -187,15 +194,15 @@ export default function FreelanceProjects() {
               </button>
             ))}
           </div>
-          
+
           <div className="hidden lg:block h-px flex-grow bg-gradient-to-r from-white/10 to-transparent" />
           <span className="shrink-0 text-[10px] font-mono text-white/20 uppercase tracking-tighter">
-            Total Projects: {filteredProjects.length}
+            Case Studies: {filteredProjects.length}
           </span>
         </div>
 
         {/* Projects Grid */}
-        <motion.div 
+        <motion.div
           layout
           transition={cardSpring}
           className="relative grid grid-cols-1 lg:grid-cols-12 gap-6"
@@ -213,8 +220,9 @@ export default function FreelanceProjects() {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.9 }}
+                  whileHover={{ y: -4 }}
                   transition={cardSpring}
-                  className={`${isFeatured ? "lg:col-span-8" : "lg:col-span-4"} group ${isInteractive ? "cursor-pointer" : ""}`}
+                  className={`${isFeatured ? "lg:col-span-8" : "lg:col-span-4"} group rounded-3xl ${isInteractive ? "cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-primary)]/60 focus-visible:ring-offset-2 focus-visible:ring-offset-black" : ""}`}
                   onMouseDown={isInteractive ? (event) => event.preventDefault() : undefined}
                   onClick={isInteractive ? () => handleCardClick(project.id) : undefined}
                   onKeyDown={
@@ -269,22 +277,28 @@ export default function FreelanceProjects() {
 
                               <div className="absolute bottom-4 right-4 flex translate-y-0 gap-2 opacity-100 transition-all duration-300">
                                 {project.github && (
-                                  <a
-                                    href={project.github}
-                                    onClick={(event) => event.stopPropagation()}
-                                    className="p-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 hover:bg-[var(--accent-primary)] transition-colors text-white"
-                                  >
-                                    <Github size={18} />
-                                  </a>
+                                  <Tooltip content={`Open ${project.title} repository`}>
+                                    <a
+                                      href={project.github}
+                                      onClick={(event) => event.stopPropagation()}
+                                      aria-label={`Open ${project.title} repository`}
+                                      className="rounded-full border border-white/20 bg-white/10 p-2 text-white backdrop-blur-md transition-colors hover:bg-[var(--accent-primary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-primary)]"
+                                    >
+                                      <Github size={18} />
+                                    </a>
+                                  </Tooltip>
                                 )}
                                 {project.link && (
-                                  <a
-                                    href={project.link}
-                                    onClick={(event) => event.stopPropagation()}
-                                    className="p-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 hover:bg-[var(--accent-primary)] transition-colors text-white"
-                                  >
-                                    <ExternalLink size={18} />
-                                  </a>
+                                  <Tooltip content={`Start a conversation about ${project.title}`}>
+                                    <a
+                                      href={project.link}
+                                      onClick={(event) => event.stopPropagation()}
+                                      aria-label={`Start a conversation about ${project.title}`}
+                                      className="rounded-full border border-white/20 bg-white/10 p-2 text-white backdrop-blur-md transition-colors hover:bg-[var(--accent-primary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-primary)]"
+                                    >
+                                      <ExternalLink size={18} />
+                                    </a>
+                                  </Tooltip>
                                 )}
                               </div>
                             </motion.div>
@@ -293,6 +307,14 @@ export default function FreelanceProjects() {
                               <p className="mb-6 line-clamp-2 text-sm leading-relaxed text-white/50">
                                 {project.description}
                               </p>
+
+                              <div className="mb-6 space-y-2">
+                                {project.casePoints.map((point) => (
+                                  <p key={point} className="text-xs leading-relaxed text-white/45">
+                                    {point}
+                                  </p>
+                                ))}
+                              </div>
 
                               <div className="flex flex-wrap gap-2">
                                 {project.tags.map(tag => (
@@ -367,22 +389,28 @@ export default function FreelanceProjects() {
                           }`}
                         >
                           {project.github && (
-                            <a
-                              href={project.github}
-                              onClick={(event) => event.stopPropagation()}
-                              className="p-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 hover:bg-[var(--accent-primary)] transition-colors text-white"
-                            >
-                              <Github size={18} />
-                            </a>
+                            <Tooltip content={`Open ${project.title} repository`}>
+                              <a
+                                href={project.github}
+                                onClick={(event) => event.stopPropagation()}
+                                aria-label={`Open ${project.title} repository`}
+                                className="rounded-full border border-white/20 bg-white/10 p-2 text-white backdrop-blur-md transition-colors hover:bg-[var(--accent-primary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-primary)]"
+                              >
+                                <Github size={18} />
+                              </a>
+                            </Tooltip>
                           )}
                           {project.link && (
-                            <a
-                              href={project.link}
-                              onClick={(event) => event.stopPropagation()}
-                              className="p-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 hover:bg-[var(--accent-primary)] transition-colors text-white"
-                            >
-                              <ExternalLink size={18} />
-                            </a>
+                            <Tooltip content={`Start a conversation about ${project.title}`}>
+                              <a
+                                href={project.link}
+                                onClick={(event) => event.stopPropagation()}
+                                aria-label={`Start a conversation about ${project.title}`}
+                                className="rounded-full border border-white/20 bg-white/10 p-2 text-white backdrop-blur-md transition-colors hover:bg-[var(--accent-primary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-primary)]"
+                              >
+                                <ExternalLink size={18} />
+                              </a>
+                            </Tooltip>
                           )}
                         </motion.div>
                       </motion.div>
@@ -438,6 +466,32 @@ export default function FreelanceProjects() {
                           ))}
                         </motion.div>
 
+                        {isFeatured && (
+                          <motion.div
+                            layout
+                            transition={cardSpring}
+                            className="mb-8 grid gap-3 md:grid-cols-3"
+                          >
+                            {project.casePoints.map((point) => {
+                              const [label, detail] = point.split(": ");
+
+                              return (
+                                <div
+                                  key={point}
+                                  className="rounded-xl border border-white/6 bg-white/[0.03] p-3 transition-colors duration-300 hover:border-[var(--accent-primary)]/25"
+                                >
+                                  <p className="mb-1 text-[9px] font-black uppercase tracking-[0.2em] text-[var(--accent-primary)]">
+                                    {label}
+                                  </p>
+                                  <p className="text-xs leading-relaxed text-white/50">
+                                    {detail}
+                                  </p>
+                                </div>
+                              );
+                            })}
+                          </motion.div>
+                        )}
+
                         <motion.div
                           layout
                           transition={cardSpring}
@@ -482,19 +536,19 @@ export default function FreelanceProjects() {
             >
               <div className="mt-12 flex flex-col items-center justify-between gap-8 rounded-[2rem] border border-[var(--accent-primary)]/10 bg-gradient-to-br from-[var(--accent-primary)]/20 to-transparent px-6 py-8 lg:flex-row lg:px-8 lg:py-12">
                 <div className="text-center lg:text-left">
-                  <h4 className="mb-2 text-2xl lg:text-3xl font-bold text-white">Have a vision for your next project?</h4>
-                  <p className="text-white/60">Let&apos;s build something that stands out from the noise.</p>
+                  <h4 className="mb-2 text-2xl lg:text-3xl font-bold text-white">Have a system or product to build?</h4>
+                  <p className="text-white/60">Let&apos;s engineer a scalable product, platform, or business system around it.</p>
                 </div>
-                <button className="flex w-full items-center justify-center gap-3 rounded-full bg-[var(--accent-primary)] px-8 py-4 text-xs font-bold uppercase tracking-widest text-white transition-all duration-500 hover:shadow-[0_0_30px_rgba(var(--accent-primary-rgb),0.4)] lg:w-auto lg:px-10 lg:py-5 lg:text-sm group">
-                  Start a Conversation
+                <a href="#contact" className="flex w-full items-center justify-center gap-3 rounded-full bg-[var(--accent-primary)] px-8 py-4 text-xs font-bold uppercase tracking-widest text-white transition-all duration-500 hover:-translate-y-0.5 hover:shadow-[0_0_30px_rgba(var(--accent-primary-rgb),0.4)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-primary)]/70 focus-visible:ring-offset-2 focus-visible:ring-offset-black lg:w-auto lg:px-10 lg:py-5 lg:text-sm group">
+                  Book a Build Call
                   <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform" />
-                </button>
+                </a>
               </div>
             </motion.div>
           )}
         </motion.div>
       </div>
-      
+
       {/* Background Decor */}
       <div className="absolute top-1/2 left-0 -translate-x-1/2 h-[300px] w-[300px] rounded-full bg-[var(--accent-primary)]/5 blur-[100px] lg:h-[500px] lg:w-[500px] lg:blur-[120px] -z-10 pointer-events-none" />
       <div className="absolute bottom-0 right-0 translate-x-1/3 h-[250px] w-[250px] rounded-full bg-[var(--accent-primary)]/10 blur-[120px] lg:h-[400px] lg:w-[400px] lg:blur-[150px] -z-10 pointer-events-none" />

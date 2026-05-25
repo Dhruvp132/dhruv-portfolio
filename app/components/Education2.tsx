@@ -23,7 +23,7 @@ export default function Education() {
   };
 
   return (
-    <section className="section-surface w-full py-24 text-white">
+    <section className="section-surface w-full pb-24 text-white">
       <div className="section-inner">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

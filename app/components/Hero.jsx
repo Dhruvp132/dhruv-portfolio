@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 
 const MOBILE_LAYOUT_QUERY = "(max-width: 767px)";
 const INTERACTIVE_CURSOR_QUERY = "(min-width: 768px) and (hover: hover) and (pointer: fine)";
+const HERO_TITLE = "PRODUCT ENGINEER";
 const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
 
 export default function Hero() {
@@ -251,14 +252,16 @@ export default function Hero() {
   return (
     <section
       ref={containerRef}
-      className="hero-surface relative mt-18 flex h-[150px] max-width-2xl items-center justify-center overflow-hidden"
+      className="hero-surface relative mt-16 flex h-[150px] w-full items-center justify-center overflow-hidden"
     >
       <div
         ref={titleBoundsRef}
         className="absolute inset-0 flex items-center justify-center text-center leading-none select-none opacity-0 pointer-events-none"
         aria-hidden="true"
       >
-        <h1 className="text-wrap mb-1 text-[12vw] md:text-[9vw] font-extrabold">DHRUV PATEL</h1>
+        <h1 className="mb-1 whitespace-nowrap text-[8vw] font-extrabold md:text-[3.6vw] lg:text-[3vw]">
+          {HERO_TITLE}
+        </h1>
       </div>
 
       <div className="hero-layer hero-aurora-layer hero-aurora-layer-active" aria-hidden="true">
@@ -269,8 +272,8 @@ export default function Hero() {
               isMobileLayout ? "hero-title-stack" : ""
             }`}
           >
-            <h1 className="hero-glow-text text-wrap mb-1 text-[12vw] md:text-[8vw] font-extrabold">
-              DHRUV PATEL
+            <h1 className="hero-glow-text mb-1 whitespace-nowrap text-[8vw] font-extrabold md:text-[3.6vw] lg:text-[3vw]">
+              {HERO_TITLE}
             </h1>
           </div>
         </div>
@@ -281,8 +284,8 @@ export default function Hero() {
         aria-hidden="true"
       >
         <div className="absolute inset-0 flex items-center justify-center text-center leading-none select-none">
-          <h1 className="text-wrap hero-base-text mb-1 text-[12vw] md:text-[8vw] font-extrabold text-white/10">
-            DHRUV PATEL
+          <h1 className="hero-base-text mb-1 whitespace-nowrap text-[8vw] font-extrabold text-white/10 md:text-[3.6vw] lg:text-[3vw]">
+            {HERO_TITLE}
           </h1>
         </div>
 
@@ -302,11 +305,17 @@ export default function Hero() {
           }}
         >
           <div className="text-center leading-none select-none">
-            <h1 className="text-wrap mb-1 text-[12vw] md:text-[8vw] font-extrabold text-white">
-              DHRUV PATEL
+            <h1 className="mb-1 whitespace-nowrap text-[8vw] font-extrabold text-white md:text-[3.6vw] lg:text-[3vw]">
+              {HERO_TITLE}
             </h1>
           </div>
         </div>
+      </div>
+
+      <div className="pointer-events-none absolute bottom-4 z-20 px-6 text-center">
+        <p className="font-mono text-[9px] font-semibold uppercase tracking-[0.16em] text-white/55 sm:text-[10px] sm:tracking-[0.26em]">
+          Engineering scalable software products for modern businesses.
+        </p>
       </div>
 
       {isMobileLayout && showMotionPrompt ? (

@@ -4,35 +4,36 @@ import { motion } from "framer-motion";
 
 export default function Education2() {
   return (
-    <section id="education" className="section-surface min-h-screen w-full text-white">
-      <div className="section-inner relative py-24 md:py-32">
+    <section id="education" className="section-surface w-full py-20 text-white md:py-24">
+      <div className="section-inner relative">
       {/* Heading */}
-      <p className="text-sm tracking-[6px] text-[var(--accent-primary)] mb-4 text-center">
+      <p className="mb-4 text-center text-xs tracking-[0.35em] text-[var(--accent-primary)]">
         WHAT I HAVE STUDIED SO FAR
       </p>
 
-      <h2 className="text-3xl md:text-5xl font-extrabold mb-24 text-center">
+      <h2 className="mb-16 text-center text-3xl font-extrabold md:mb-20 md:text-5xl">
         Education<span className="text-[var(--accent-primary)]">.</span>
       </h2>
 
       {/* Vertical Line */}
-      <div className="absolute left-1/2 top-56 bottom-10 w-[2px] bg-[#F56639]/30"></div>
+      <div className="absolute bottom-4 left-1/2 top-48 hidden w-[2px] bg-[#F56639]/30 md:block"></div>
 
-      <div className="relative flex flex-col gap-32">
+      <div className="relative flex flex-col gap-16 md:gap-24">
         {/* Entry 1 - LEFT */}
         <motion.div
           initial={{ opacity: 0, x: -80 }}
           whileInView={{ opacity: 1, x: 0 }}
+          whileHover={{ y: -4, borderColor: "rgba(var(--accent-primary-rgb), 0.42)" }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
           className="relative flex justify-start w-full"
         >
           <div
-            className="surface-panel w-full border border-[#F56639]/30 
+            className="surface-panel w-full border border-[#F56639]/30
           md:w-1/2
-          p-8 rounded-xl shadow-[0_0_25px_rgba(243,102,57,0.32)]"
+          rounded-xl p-6 shadow-[0_0_25px_rgba(243,102,57,0.22)] transition-[border-color,box-shadow,transform] duration-300 hover:shadow-[0_18px_54px_rgba(0,0,0,0.28)] md:p-8"
           >
-            <h3 className="text-2xl font-bold mb-2">
+            <h3 className="mb-2 text-xl font-bold md:text-2xl">
               Bachelor of Technology (BTech)
             </h3>
 
@@ -59,18 +60,19 @@ export default function Education2() {
         <motion.div
           initial={{ opacity: 0, x: 80 }}
           whileInView={{ opacity: 1, x: 0 }}
+          whileHover={{ y: -4, borderColor: "rgba(var(--accent-primary-rgb), 0.42)" }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
           className="relative flex justify-end w-full"
         >
           <div
-            className="surface-panel w-full border border-[#F56639]/30 
+            className="surface-panel w-full border border-[#F56639]/30
           md:w-1/2
-          p-8 rounded-xl shadow-[0_0_25px_rgba(243,102,57,0.32)]"
+          rounded-xl p-6 shadow-[0_0_25px_rgba(243,102,57,0.22)] transition-[border-color,box-shadow,transform] duration-300 hover:shadow-[0_18px_54px_rgba(0,0,0,0.28)] md:p-8"
           >
-            <h3 className="text-2xl font-bold mb-4">Academic Highlights</h3>
+            <h3 className="mb-4 text-xl font-bold md:text-2xl">Academic Highlights</h3>
 
-            <ul className="text-gray-300 space-y-3">
+            <ul className="space-y-3 text-sm text-gray-300 md:text-base">
               <li>• Strong foundation in Data Structures & Algorithms</li>
               <li>• Advanced understanding of DBMS, OS & Computer Networks</li>
               <li>

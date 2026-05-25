@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Pacifico } from "next/font/google";
 
 import DotFieldBackground from "./components/DotFieldBackground";
-import CursorEffect from "./components/CursorEffect";
+import OnekoMascot from "./components/OnekoMascot";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -22,8 +22,9 @@ const pacifico = Pacifico({
 });
 
 export const metadata: Metadata = {
-  title: "Dhruv Patel Portfolio",
-  description: "Full Stack Developer Portfolio",
+  title: "Dhruv Patel | Product Engineering for Scalable Systems",
+  description:
+    "Full-Stack Product Engineer building scalable SaaS platforms, business systems, and modern digital products.",
 };
 
 export default function RootLayout({
@@ -34,9 +35,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} ${pacifico.variable} antialiased md:max-w-xl mx-auto flex-wrap text-wrap md:px-40 bg-black`}>
-        {/* <CursorEffect /> */}
         <div className="">
           <DotFieldBackground />
+          <OnekoMascot />
           <div className="app-content">{children}</div>
         </div>
       </body>

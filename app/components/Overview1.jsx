@@ -1,13 +1,14 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import { motion, useInView } from "framer-motion";
 import { MapPin, Phone, Mail, Link2, ArrowUpRight } from "lucide-react";
+import Tooltip from "./Tooltip";
 
 const infoItems = [
   { icon: MapPin, label: "Ahmedabad, India", sublabel: "Location" },
-  { icon: Phone, label: "+91-958 948 2345", sublabel: "Mobile" },
+  { icon: Phone, label: "+91-958 948 2345", sublabel: "Direct Call" },
   {
     icon: Mail,
     label: "dhruvpatel13210@gmail.com",
@@ -17,7 +18,7 @@ const infoItems = [
   {
     icon: Link2,
     label: "dhruvpatel1310",
-    sublabel: "Linkedin",
+    sublabel: "LinkedIn",
     color: "text-[var(--accent-primary)]",
   },
 ];
@@ -25,19 +26,23 @@ const infoItems = [
 const socialLinks = [
   { name: "GitHub", url: "https://github.com/Dhruvp132" },
   { name: "LinkedIn", url: "https://www.linkedin.com/in/dhruvpatel1310/" },
-  { name: "X (Twitter)", url: "#" },
-  { name: "Discord", url: "#" },
+  { name: "Email", url: "mailto:dhruvpatel13210@gmail.com" },
+  { name: "LeetCode", url: "https://leetcode.com/u/Dhruvp13/" },
+  { name: "Twitter", url: "https://x.com/13Dhruvp13/" },
 ];
 
 const stats = [
-  { value: "1.5+", label: "Years of Experience" },
-  { value: "400+", label: "LeetCode" },
-  { value: "9.28", label: "CGPA" },
+  { value: "1.5+", label: "Years Product Engineering" },
+  { value: "5+", label: "Businesses Supported" },
+  { value: "10+", label: "Systems Shipped" },
 ];
 
-// const skills = ["React", "Node", "AWS", "SQL"];
-const skills =[]
-
+const skills = [
+  "SaaS Engineering",
+  "Business Systems",
+  "Backend Architecture",
+  "Modern Web Apps",
+];
 
 const container = {
   hidden: { opacity: 0 },
@@ -53,6 +58,57 @@ const item = {
   hidden: { y: 20, opacity: 0 },
   show: { y: 0, opacity: 1 },
 };
+
+function AnimatedStatValue({ value }) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.4 });
+  const [displayValue, setDisplayValue] = useState("0");
+
+  useEffect(() => {
+    if (!isInView) return;
+
+    let animationFrame = 0;
+    const match = value.match(/^(\d+(?:\.\d+)?)(.*)$/);
+    if (!match) {
+      animationFrame = requestAnimationFrame(() => setDisplayValue(value));
+      return () => cancelAnimationFrame(animationFrame);
+    }
+
+    const [, numericValue, suffix] = match;
+    const target = Number(numericValue);
+    const decimals = numericValue.includes(".") ? numericValue.split(".")[1].length : 0;
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (prefersReducedMotion) {
+      animationFrame = requestAnimationFrame(() => setDisplayValue(value));
+      return () => cancelAnimationFrame(animationFrame);
+    }
+
+    const startTime = performance.now();
+    const duration = 850;
+
+    const tick = (time) => {
+      const progress = Math.min((time - startTime) / duration, 1);
+      const easedProgress = 1 - Math.pow(1 - progress, 3);
+      const current = target * easedProgress;
+      setDisplayValue(`${current.toFixed(decimals)}${suffix}`);
+
+      if (progress < 1) {
+        animationFrame = requestAnimationFrame(tick);
+      }
+    };
+
+    animationFrame = requestAnimationFrame(tick);
+
+    return () => cancelAnimationFrame(animationFrame);
+  }, [isInView, value]);
+
+  return (
+    <p ref={ref} className="text-2xl leading-tight font-black text-white">
+      {displayValue}
+    </p>
+  );
+}
 
 export default function Overview() {
   const [currentTime, setCurrentTime] = useState("");
@@ -86,7 +142,7 @@ export default function Overview() {
           <div className="flex items-center gap-2">
             <div className="h-2 w-2 rounded-full bg-[var(--accent-primary)]" />
             <span className="whitespace-nowrap font-mono text-[9px] font-bold uppercase tracking-[0.2em] text-zinc-500">
-              Portfolio // 2026
+              Product Systems // 2026
             </span>
           </div>
           <div className="font-mono text-[9px] tracking-wider text-zinc-500 tabular-nums">
@@ -108,34 +164,54 @@ export default function Overview() {
             <div className="absolute -top-10 -right-10 h-40 w-40 rounded-full bg-[rgba(245,102,57,0.1)] blur-[60px] transition-all duration-500 group-hover:bg-[rgba(245,102,57,0.2)]" />
 
             <div className="relative">
-              <div className="mb-6 h-24 w-24 rounded-full border-4 border-[var(--accent-primary)] p-1 shadow-[0_0_20px_rgba(243,102,57,0.15)]">
-                <div className="relative flex h-full w-full items-center justify-center overflow-hidden rounded-full bg-zinc-800">
-                  <Image
-                    src="/dhruv.jpeg"
-                    alt="Dhruv Patel"
-                    fill
-                    sizes="96px"
-                    className="object-cover"
-                  />
+              <div className="flex items-center gap-5">
+                <div
+                  data-oneko-dodge="true"
+                  className="h-20 w-20 shrink-0 rounded-full border-4 border-[var(--accent-primary)] p-1 shadow-[0_0_20px_rgba(243,102,57,0.15)] sm:h-24 sm:w-24"
+                >
+                  <div className="relative flex h-full w-full items-center justify-center overflow-hidden rounded-full bg-zinc-800">
+                    <Image
+                      src="/dhruv.jpeg"
+                      alt="Dhruv Patel"
+                      fill
+                      sizes="96px"
+                      className="object-cover"
+                    />
+                  </div>
+                </div>
+
+                <div className="min-w-0">
+                  <h1
+                    data-oneko-dodge="true"
+                    className="mb-3 text-4xl font-black leading-[0.95] tracking-tighter text-white sm:text-5xl md:text-4xl lg:text-5xl"
+                  >
+                    Dhruv
+                    <br />
+                    Patel<span className="text-[var(--accent-primary)]">.</span>
+                  </h1>
+
+                  <p className="font-mono text-[9px] font-bold uppercase tracking-[0.16em] text-[var(--accent-primary)] sm:text-[10px]">
+                    Full-Stack Product Engineer
+                  </p>
                 </div>
               </div>
 
-              <h1 className="mb-3 text-3xl font-black leading-tight tracking-tighter md:text-4xl lg:text-5xl">
-                Dhruv
-                <br />
-                Patel<span className="text-[var(--accent-primary)]">.</span>
-              </h1>
-
-              <p className="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-[var(--accent-primary)]">
-                Software Dev Engineer
-              </p>
+              <div className="mt-9 border-l border-[var(--accent-primary)]/35 pl-4">
+                <p className="text-xs leading-relaxed text-zinc-400">
+                  Product-focused software engineer building{" "}
+                  <span className="font-medium text-white">
+                    scalable SaaS platforms, business systems,
+                  </span>{" "}
+                  and high-performance digital products for modern teams.
+                </p>
+              </div>
             </div>
 
             <div className="mt-6">
               <div className="inline-flex items-center gap-3 rounded-xl border border-zinc-800 bg-black/40 px-4 py-2">
                 <div className="h-1.5 w-1.5 rounded-full bg-green-500 animate-pulse" />
                 <span className="text-[9px] font-bold uppercase tracking-wider text-zinc-400">
-                  Available now
+                  Selective product builds
                 </span>
               </div>
             </div>
@@ -147,7 +223,7 @@ export default function Overview() {
           >
             <div className="mb-8 flex items-center justify-between">
               <h2 className="text-[10px] font-bold uppercase tracking-widest text-zinc-500">
-                System Information
+                Contact Channels
               </h2>
               <span className="font-mono text-[9px] font-bold text-[var(--accent-primary)]">
                 v1.2.0
@@ -184,15 +260,8 @@ export default function Overview() {
                 About
               </h2>
               <div className="space-y-3">
-                <p className="text-xs leading-relaxed text-zinc-400">
-                  Software Developer specializing in{" "}
-                  <span className="font-medium text-white">
-                    full-stack architectures
-                  </span>{" "}
-                  and high-performance cloud solutions.
-                </p>
                 <p className="border-l-2 border-[var(--accent-primary)] pl-3 text-xs leading-relaxed text-zinc-400 italic">
-                  Focusing on clean code, product thinking, and user-centric design.
+                  I connect architecture, UX, automation, and business impact so software is built to ship and scale.
                 </p>
               </div>
             </div>
@@ -223,21 +292,22 @@ export default function Overview() {
               </h2>
               <div className="flex flex-grow flex-col gap-0.5">
                 {socialLinks.map((social) => (
-                  <a
-                    key={social.name}
-                    href={social.url}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="group flex items-center justify-between border-b border-black/10 py-2.5 transition-all duration-300 hover:px-1"
-                  >
-                    <span className="text-xs font-black uppercase tracking-tighter">
-                      {social.name}
-                    </span>
-                    <ArrowUpRight
-                      size={14}
-                      className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"
-                    />
-                  </a>
+                  <Tooltip key={social.name} content={`Open ${social.name}`} className="w-full">
+                    <a
+                      href={social.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="group flex w-full items-center justify-between border-b border-black/10 py-2.5 transition-all duration-300 hover:px-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/30"
+                    >
+                      <span className="text-xs font-black uppercase tracking-tighter">
+                        {social.name}
+                      </span>
+                      <ArrowUpRight
+                        size={14}
+                        className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"
+                      />
+                    </a>
+                  </Tooltip>
                 ))}
               </div>
             </div>
@@ -250,9 +320,7 @@ export default function Overview() {
             <div className="grid w-full grid-cols-3 gap-6">
               {stats.map((stat) => (
                 <div key={stat.label}>
-                  <p className="text-2xl leading-tight font-black text-white">
-                    {stat.value}
-                  </p>
+                  <AnimatedStatValue value={stat.value} />
                   <p className="text-[8px] font-bold uppercase tracking-widest text-zinc-500">
                     {stat.label}
                   </p>

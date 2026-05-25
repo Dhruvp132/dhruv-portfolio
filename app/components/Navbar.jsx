@@ -2,16 +2,13 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence, useScroll, useSpring } from "motion/react";
 import { Menu, X, ChevronRight } from "lucide-react";
+import Tooltip from "./Tooltip";
 
 const NAV_ITEMS = [
   { name: "About", href: "#overview" },
-  // { name: "Education", href: "#education" },
-  { name: "Work", href: "#selectedworks" },
-  { name: "Experience", href: "#selectedworks" },
-  // { name: "Certifications", href: "#certifications" },
-  { name: "Skills", href: "#skills" },
-  { name: "Projects", href: "#projects" },
-
+  { name: "Case Studies", href: "#projects" },
+  { name: "Systems", href: "#selectedworks" },
+  { name: "Capabilities", href: "#skills" },
   { name: "Contact", href: "#contact" },
 ];
 
@@ -19,7 +16,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const { scrollYProgress } = useScroll();
-  
+
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 30,
@@ -43,8 +40,8 @@ export default function Navbar() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ type: "spring", duration: 0.001, easeOut: [0.16, 1, 0.9, 1] }}
         className={`fixed top-3 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-7xl px-6 py-4 transition-all duration-500 rounded-full border border-white/5 ${
-          isScrolled 
-            ? "bg-transparent backdrop-blur-xl border-white/10 py-3 shadow-[0_8px_32px_rgba(0,0,0,0.5)]" 
+          isScrolled
+            ? "bg-transparent backdrop-blur-xl border-white/10 py-3 shadow-[0_8px_32px_rgba(0,0,0,0.5)]"
             : "bg-transparent backdrop-blur-md"
         }`}
       >
@@ -56,7 +53,7 @@ export default function Navbar() {
             </span>
             <div className="h-px w-0 group-hover:w-full bg-[var(--accent-primary)] transition-all duration-300" />
             <span className="text-[10px] uppercase tracking-[0.3em] font-medium text-white/40 mt-0.5">
-              Full Stack
+              Product Systems
             </span>
           </div>
 
@@ -66,7 +63,7 @@ export default function Navbar() {
               <motion.a
                 key={item.name}
                 href={item.href}
-                className="nav-link text-white/70 hover:text-white"
+                className="nav-link rounded text-white/70 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-primary)]/70"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 + index * 0.05, duration: 0.5 }}
@@ -74,34 +71,42 @@ export default function Navbar() {
                 {item.name}
               </motion.a>
             ))}
-            
-            <motion.button
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.5 }}
-              className="px-5 py-2 rounded-full bg-[var(--accent-primary)] text-white text-xs font-bold uppercase tracking-wider hover:bg-[#ff7b52] transition-colors flex items-center gap-2 group"
-            >
-              Resume
-              <ChevronRight size={14} className="group-hover:translate-x-1 transition-transform" />
-            </motion.button>
-            <motion.button
+
+            <div data-oneko-dodge="true" className="flex items-center gap-3">
+              <motion.a
+                href="#projects"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.5 }}
+                className="group flex items-center gap-2 rounded-full bg-[var(--accent-primary)] px-5 py-2 text-xs font-bold uppercase tracking-wider text-white transition-colors hover:bg-[#ff7b52] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-primary)]/70 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+              >
+                View Case Studies
+                <ChevronRight size={14} className="transition-transform group-hover:translate-x-1" />
+              </motion.a>
+              <motion.a
+                href="#contact"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-6 py-2.5 bg-white text-black text-[10px] font-black uppercase tracking-widest rounded-full hover:bg-[#F56639] hover:text-white transition-all shadow-[0_4px_20px_rgba(255,255,255,0.1)]"
+                className="rounded-full bg-white px-6 py-2.5 text-[10px] font-black uppercase tracking-widest text-black shadow-[0_4px_20px_rgba(255,255,255,0.1)] transition-all hover:bg-[#F56639] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-primary)]/70 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
                 id="nav-cta"
               >
-                Let&apos;s Talk
-              </motion.button>
+                Book a Call
+              </motion.a>
+            </div>
           </div>
 
           {/* Mobile Toggle */}
           <div className="lg:hidden flex items-center">
-            <button 
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-white hover:text-[var(--accent-primary)] transition-colors p-2"
-            >
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
+            <Tooltip content={isOpen ? "Close menu" : "Open menu"} side="left">
+              <button
+                type="button"
+                aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
+                onClick={() => setIsOpen(!isOpen)}
+                className="rounded p-2 text-white transition-colors hover:text-[var(--accent-primary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-primary)]/70"
+              >
+                {isOpen ? <X size={24} /> : <Menu size={24} />}
+              </button>
+            </Tooltip>
           </div>
         </div>
 
@@ -121,12 +126,16 @@ export default function Navbar() {
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-[60] bg-black/90 backdrop-blur-2xl flex flex-col items-center justify-center lg:hidden"
           >
-            <button 
-              onClick={closeMenu}
-              className="absolute top-8 right-[35px] text-white/50 hover:text-white transition-colors"
-            >
-              <X size={32} />
-            </button>
+            <Tooltip content="Close menu" side="left" className="absolute right-[35px] top-8">
+              <button
+                type="button"
+                aria-label="Close navigation menu"
+                onClick={closeMenu}
+                className="rounded p-2 text-white/50 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-primary)]/70"
+              >
+                <X size={32} />
+              </button>
+            </Tooltip>
 
             <div className="flex flex-col items-center gap-8">
               {NAV_ITEMS.map((item, index) => (
@@ -137,22 +146,24 @@ export default function Navbar() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  className="text-xl md:text-3xl lg:text-3xl font-light tracking-widest text-white/60 hover:text-[var(--accent-primary)] hover:tracking-[0.2em] transition-all duration-300"
+                  className="rounded text-xl font-light tracking-widest text-white/60 transition-all duration-300 hover:text-[var(--accent-primary)] hover:tracking-[0.2em] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-primary)]/70 md:text-3xl lg:text-3xl"
                 >
                   {item.name}
                 </motion.a>
               ))}
-              
-              <motion.button
+
+              <motion.a
+                href="#contact"
+                onClick={closeMenu}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: NAV_ITEMS.length * 0.1 }}
-                className="mt-8 px-8 py-3 rounded-full border border-[var(--accent-primary)] text-[var(--accent-primary)] text-sm font-bold uppercase tracking-[0.2em] hover:bg-[var(--accent-primary)] hover:text-white transition-all duration-300"
+                className="mt-8 rounded-full border border-[var(--accent-primary)] px-8 py-3 text-sm font-bold uppercase tracking-[0.2em] text-[var(--accent-primary)] transition-all duration-300 hover:bg-[var(--accent-primary)] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-primary)]/70"
               >
-                Get In Touch
-              </motion.button>
+                Book a Call
+              </motion.a>
 
-               
+
 
             </div>
 
