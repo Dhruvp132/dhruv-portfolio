@@ -192,7 +192,7 @@ export function ProjectsSection() {
                   </div>
 
                   <div className="ml-4 flex shrink-0 gap-3">
-                    <Tooltip content={`Open ${project.title} repository`}>
+                    {/* <Tooltip content={`Open ${project.title} repository`}> */}
                       <a
                         href={project.liveUrl}
                         target="_blank"
@@ -202,9 +202,9 @@ export function ProjectsSection() {
                       >
                         <Link2 size={18} className="text-[var(--accent-primary)]" />
                       </a>
-                    </Tooltip>
+                    {/* </Tooltip> */}
 
-                    <Tooltip content={`${isExpanded ? "Collapse" : "Expand"} ${project.title} details`}>
+                    {/* <Tooltip content={`${isExpanded ? "Collapse" : "Expand"} ${project.title} details`}> */}
                       <button
                         type="button"
                         onClick={() => toggleProjectExpand(project.id)}
@@ -218,7 +218,7 @@ export function ProjectsSection() {
                           <ChevronDown size={18} className="text-zinc-300" />
                         )}
                       </button>
-                    </Tooltip>
+                    {/* </Tooltip> */}
                   </div>
                 </div>
 

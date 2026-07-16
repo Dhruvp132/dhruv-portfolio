@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import { MapPin, Phone, Mail, Link2, ArrowUpRight } from "lucide-react";
-import Tooltip from "./Tooltip";
+// import Tooltip from "./Tooltip";
 
 const infoItems = [
   { icon: MapPin, label: "Ahmedabad, India", sublabel: "Location" },
@@ -292,8 +292,9 @@ export default function Overview() {
               </h2>
               <div className="flex flex-grow flex-col gap-0.5">
                 {socialLinks.map((social) => (
-                  <Tooltip key={social.name} content={`Open ${social.name}`} className="w-full">
+                  // <Tooltip key={social.name} content={`Open ${social.name}`} className="w-full">
                     <a
+                      key={social.name}
                       href={social.url}
                       target="_blank"
                       rel="noreferrer"
@@ -307,7 +308,7 @@ export default function Overview() {
                         className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"
                       />
                     </a>
-                  </Tooltip>
+                  // </Tooltip>
                 ))}
               </div>
             </div>

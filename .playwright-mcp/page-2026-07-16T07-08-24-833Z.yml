@@ -1,0 +1,604 @@
+- generic [active] [ref=e1]:
+  - main [ref=e4]:
+    - navigation [ref=e5]:
+      - generic [ref=e6]:
+        - generic [ref=e7] [cursor=pointer]:
+          - generic [ref=e8]: DHRUV PATEL
+          - generic [ref=e9]: Product Engineer
+        - generic [ref=e10]:
+          - link "About" [ref=e11] [cursor=pointer]:
+            - /url: "#overview"
+          - link "Case Studies" [ref=e12] [cursor=pointer]:
+            - /url: "#projects"
+          - link "Systems" [ref=e13] [cursor=pointer]:
+            - /url: "#selectedworks"
+          - link "Capabilities" [ref=e14] [cursor=pointer]:
+            - /url: "#skills"
+          - link "Contact" [ref=e15] [cursor=pointer]:
+            - /url: "#contact"
+          - generic [ref=e16]:
+            - link "Download resume" [ref=e17] [cursor=pointer]:
+              - /url: /resume/Dhruv_Patel_Resume.pdf
+            - link "View Case Studies" [ref=e21] [cursor=pointer]:
+              - /url: "#projects"
+            - link "Book a Call" [ref=e24] [cursor=pointer]:
+              - /url: "#contact"
+    - generic [ref=e25]:
+      - generic:
+        - heading [level=1]: PRODUCT ENGINEER
+      - generic:
+        - generic:
+          - generic:
+            - heading [level=1]: PRODUCT ENGINEER
+      - generic:
+        - generic:
+          - heading [level=1]: PRODUCT ENGINEER
+        - generic:
+          - generic:
+            - heading [level=1]: PRODUCT ENGINEER
+      - generic:
+        - paragraph: Engineering scalable software products for modern businesses.
+    - generic [ref=e27]:
+      - navigation [ref=e28]:
+        - generic [ref=e29]: Product Systems // 2026
+        - generic [ref=e32]: AHMEDABAD • 12:38
+      - generic [ref=e33]:
+        - generic [ref=e34]:
+          - generic [ref=e36]:
+            - generic [ref=e37]:
+              - img "Dhruv Patel" [ref=e40]
+              - generic [ref=e41]:
+                - heading "Dhruv Patel." [level=1] [ref=e42]: DhruvPatel.
+                - paragraph [ref=e43]: Full-Stack Product Engineer
+            - paragraph [ref=e45]: Product-focused software engineer building scalable SaaS platforms, business systems, and high-performance digital products for modern teams.
+          - generic [ref=e46]: Selective product builds
+        - generic [ref=e50]:
+          - generic [ref=e51]:
+            - heading "Contact Channels" [level=2] [ref=e52]
+            - generic [ref=e53]: v1.2.0
+          - generic [ref=e54]:
+            - generic [ref=e60]:
+              - paragraph [ref=e61]: Location
+              - paragraph [ref=e62]: Ahmedabad, India
+            - generic [ref=e67]:
+              - paragraph [ref=e68]: Direct Call
+              - paragraph [ref=e69]: +91-958 948 2345
+            - generic [ref=e75]:
+              - paragraph [ref=e76]: Email
+              - paragraph [ref=e77]: dhruvpatel13210@gmail.com
+            - generic [ref=e83]:
+              - paragraph [ref=e84]: LinkedIn
+              - paragraph [ref=e85]: dhruvpatel1310
+        - generic [ref=e86]:
+          - generic [ref=e87]:
+            - heading "About" [level=2] [ref=e88]
+            - paragraph [ref=e90]: I connect architecture, UX, automation, and business impact so software is built to ship and scale.
+          - generic [ref=e91]:
+            - generic [ref=e92]: SaaS Engineering
+            - generic [ref=e93]: Business Systems
+            - generic [ref=e94]: Backend Architecture
+            - generic [ref=e95]: Modern Web Apps
+        - generic [ref=e96]:
+          - generic: D
+          - generic [ref=e97]:
+            - heading "Connect" [level=2] [ref=e98]
+            - generic [ref=e99]:
+              - link "GitHub" [ref=e100] [cursor=pointer]:
+                - /url: https://github.com/Dhruvp132
+              - link "LinkedIn" [ref=e105] [cursor=pointer]:
+                - /url: https://www.linkedin.com/in/dhruvpatel1310/
+              - link "Email" [ref=e110] [cursor=pointer]:
+                - /url: mailto:dhruvpatel13210@gmail.com
+              - link "LeetCode" [ref=e115] [cursor=pointer]:
+                - /url: https://leetcode.com/u/Dhruvp13/
+              - link "Twitter" [ref=e120] [cursor=pointer]:
+                - /url: https://x.com/13Dhruvp13/
+        - generic [ref=e126]:
+          - generic [ref=e127]:
+            - paragraph [ref=e128]: "0"
+            - paragraph [ref=e129]: Years Product Engineering
+          - generic [ref=e130]:
+            - paragraph [ref=e131]: "0"
+            - paragraph [ref=e132]: Businesses Supported
+          - generic [ref=e133]:
+            - paragraph [ref=e134]: "0"
+            - paragraph [ref=e135]: Systems Shipped
+    - generic [ref=e137]:
+      - generic [ref=e138]:
+        - heading "Product Engineering Experience" [level=2] [ref=e139]
+        - paragraph [ref=e140]: Building scalable software systems across SaaS, automation, commerce, and high-performance application workflows.
+      - generic [ref=e141]:
+        - generic [ref=e142]:
+          - generic [ref=e143]: 5+
+          - generic [ref=e144]: Businesses Supported
+        - generic [ref=e145]:
+          - generic [ref=e146]: 10+
+          - generic [ref=e147]: Systems Shipped
+        - generic [ref=e148]:
+          - generic [ref=e149]: 200+
+          - generic [ref=e150]: Students Mentored
+      - generic [ref=e151]:
+        - generic [ref=e152]:
+          - generic [ref=e153]:
+            - generic [ref=e154]:
+              - generic [ref=e155]:
+                - heading "Software Engineer, Product Systems" [level=4] [ref=e156]
+                - generic [ref=e157]: Currently building
+              - paragraph [ref=e159]: Prime Apps
+            - generic [ref=e160]: Apr 2024 – Current
+          - paragraph [ref=e161]: Engineering performance-critical application flows, AI-assisted n8n automation, production stability improvements, and scalable web/mobile product systems.
+        - generic [ref=e162]:
+          - generic [ref=e163]:
+            - generic [ref=e164]:
+              - generic [ref=e165]:
+                - heading "Independent Product Engineer" [level=4] [ref=e166]
+                - generic [ref=e167]: Active client work
+              - paragraph [ref=e169]: Client Systems
+            - generic [ref=e170]: Oct 2024 – Current
+          - paragraph [ref=e171]: Building production-ready business software for export, automation, and commerce clients with SEO, payments, product workflows, and deployment pipelines.
+        - generic [ref=e172]:
+          - generic [ref=e173]:
+            - generic [ref=e174]:
+              - heading "Software Engineering & DSA Instructor" [level=4] [ref=e176]
+              - paragraph [ref=e177]: Apna College
+            - generic [ref=e178]: Jun 2024 – Oct 2024
+          - paragraph [ref=e179]: Conducted 50+ live DSA sessions, mentored 200+ students, and strengthened algorithmic thinking, debugging discipline, and implementation quality.
+    - generic [ref=e181]:
+      - generic [ref=e182]:
+        - generic [ref=e183]:
+          - generic [ref=e184]: Selected Case Studies
+          - heading "BUSINESS SYSTEMS ENGINEERED TO SCALE" [level=2] [ref=e185]
+        - paragraph [ref=e186]: Client work packaged as business problems, engineered systems, architecture decisions, and practical outcomes.
+      - generic [ref=e187]:
+        - generic [ref=e188]:
+          - button "All" [pressed] [ref=e189]
+          - button "Automation" [ref=e191]
+          - button "Agri Export" [ref=e192]
+          - button "Commerce" [ref=e193]
+        - generic [ref=e195]: "Case Studies: 3"
+      - generic [ref=e196]:
+        - generic [ref=e198]:
+          - generic [ref=e199]:
+            - img "Utsav International" [ref=e200]
+            - generic [ref=e202]: Export Business System
+            - link "Start a conversation about Utsav International" [ref=e205] [cursor=pointer]:
+              - /url: "#contact"
+          - generic [ref=e210]:
+            - generic [ref=e211]:
+              - heading "Utsav International" [level=3] [ref=e212]
+              - generic [ref=e213]: "01"
+            - paragraph [ref=e214]: Engineered a credibility-first digital presence for an agri-export business with SEO-ready pages, fast responsive product presentation, and production deployment.
+            - generic [ref=e215]:
+              - generic [ref=e216]: Next.js
+              - generic [ref=e217]: TypeScript
+              - generic [ref=e218]: SEO
+              - generic [ref=e219]: Vercel
+            - generic [ref=e220]:
+              - generic [ref=e221]:
+                - paragraph [ref=e222]: Problem
+                - paragraph [ref=e223]: Buyers needed a clearer way to evaluate products, trust signals, and company capability.
+              - generic [ref=e224]:
+                - paragraph [ref=e225]: System
+                - paragraph [ref=e226]: Built a high-performance business website structured around product discovery and inquiry flow.
+              - generic [ref=e227]:
+                - paragraph [ref=e228]: Impact
+                - paragraph [ref=e229]: Improved online credibility, search readiness, and mobile browsing quality for international prospects.
+            - generic [ref=e230]: Explore Case Study
+        - button "JD Lights & Automation Automation Business System Start a conversation about JD Lights & Automation JD Lights & Automation 02 Built and maintain a scalable web system for a lights and automation business with fast-loading pages, responsive UX, and ongoing client-driven improvements. TypeScript Next.js Vercel Explore Case Study" [ref=e235] [cursor=pointer]:
+          - generic [ref=e236]:
+            - generic [ref=e237]:
+              - img "JD Lights & Automation" [ref=e238]
+              - generic [ref=e240]: Automation Business System
+              - link "Start a conversation about JD Lights & Automation" [ref=e243]:
+                - /url: "#contact"
+            - generic [ref=e248]:
+              - generic [ref=e249]:
+                - heading "JD Lights & Automation" [level=3] [ref=e250]
+                - generic [ref=e251]: "02"
+              - paragraph [ref=e252]: Built and maintain a scalable web system for a lights and automation business with fast-loading pages, responsive UX, and ongoing client-driven improvements.
+              - generic [ref=e253]:
+                - generic [ref=e254]: TypeScript
+                - generic [ref=e255]: Next.js
+                - generic [ref=e256]: Vercel
+              - generic [ref=e257]: Explore Case Study
+        - button "Colt & Co. Commerce Platform Start a conversation about Colt & Co. Colt & Co. 03 Developing a production-ready commerce platform with Razorpay payments, product and order management, delivery workflows, and modern deployment pipelines. Next.js TypeScript MongoDB Razorpay Explore Case Study" [ref=e262] [cursor=pointer]:
+          - generic [ref=e263]:
+            - generic [ref=e264]:
+              - img "Colt & Co." [ref=e265]
+              - generic [ref=e267]: Commerce Platform
+              - link "Start a conversation about Colt & Co." [ref=e270]:
+                - /url: "#contact"
+            - generic [ref=e275]:
+              - generic [ref=e276]:
+                - heading "Colt & Co." [level=3] [ref=e277]
+                - generic [ref=e278]: "03"
+              - paragraph [ref=e279]: Developing a production-ready commerce platform with Razorpay payments, product and order management, delivery workflows, and modern deployment pipelines.
+              - generic [ref=e280]:
+                - generic [ref=e281]: Next.js
+                - generic [ref=e282]: TypeScript
+                - generic [ref=e283]: MongoDB
+                - generic [ref=e284]: Razorpay
+              - generic [ref=e285]: Explore Case Study
+        - generic [ref=e291]:
+          - generic [ref=e292]:
+            - heading "Have a system or product to build?" [level=4] [ref=e293]
+            - paragraph [ref=e294]: Let's engineer a scalable product, platform, or business system around it.
+          - link "Book a Build Call" [ref=e295] [cursor=pointer]:
+            - /url: "#contact"
+    - generic [ref=e300]:
+      - generic [ref=e301]:
+        - paragraph [ref=e302]: Product Engineering Stack
+        - heading "Engineering Capabilities" [level=2] [ref=e303]
+        - paragraph [ref=e304]: A practical stack for building production-ready software systems, from interface quality to backend workflows and deployment.
+      - list [ref=e305]:
+        - listitem [ref=e306]:
+          - link "Scalable Systems Architecture" [ref=e308] [cursor=pointer]:
+            - /url: https://en.wikipedia.org/wiki/Scalability
+            - img "Scalable Systems icon" [ref=e309]
+            - text: Scalable Systems
+        - listitem [ref=e310]:
+          - link "Next.js" [ref=e311] [cursor=pointer]:
+            - /url: https://nextjs.org/
+            - img "Next.js icon" [ref=e312]
+            - text: Next.js
+        - listitem [ref=e313]:
+          - link "TypeScript" [ref=e314] [cursor=pointer]:
+            - /url: https://www.typescriptlang.org/
+            - img "TypeScript icon" [ref=e315]
+            - text: TypeScript
+        - listitem [ref=e316]:
+          - link "React" [ref=e317] [cursor=pointer]:
+            - /url: https://react.dev/
+            - img "React icon" [ref=e318]
+            - text: React
+        - listitem [ref=e319]:
+          - link "Node.js" [ref=e320] [cursor=pointer]:
+            - /url: https://nodejs.org/
+            - img "Node.js icon" [ref=e321]
+            - text: Node.js
+        - listitem [ref=e322]:
+          - link "PostgreSQL" [ref=e323] [cursor=pointer]:
+            - /url: https://www.postgresql.org/
+            - img "PostgreSQL icon" [ref=e324]
+            - text: PostgreSQL
+        - listitem [ref=e325]:
+          - link "MongoDB" [ref=e326] [cursor=pointer]:
+            - /url: https://www.mongodb.com/
+            - img "MongoDB icon" [ref=e327]
+            - text: MongoDB
+        - listitem [ref=e328]:
+          - link "Prisma" [ref=e330] [cursor=pointer]:
+            - /url: https://www.prisma.io/
+            - img "Prisma icon" [ref=e331]
+            - text: Prisma
+        - listitem [ref=e332]:
+          - link "Redis" [ref=e334] [cursor=pointer]:
+            - /url: https://redis.io/
+            - img "Redis icon" [ref=e335]
+            - text: Redis
+        - listitem [ref=e336]:
+          - link "GraphQL" [ref=e338] [cursor=pointer]:
+            - /url: https://graphql.org/
+            - img "GraphQL icon" [ref=e339]
+            - text: GraphQL
+        - listitem [ref=e340]:
+          - link "AWS" [ref=e341] [cursor=pointer]:
+            - /url: https://aws.amazon.com/
+            - img "AWS icon" [ref=e342]
+            - text: AWS
+        - listitem [ref=e343]:
+          - link "Cloudflare" [ref=e345] [cursor=pointer]:
+            - /url: https://www.cloudflare.com/
+            - img "Cloudflare icon" [ref=e346]
+            - text: Cloudflare
+        - listitem [ref=e347]:
+          - link "Docker" [ref=e349] [cursor=pointer]:
+            - /url: https://www.docker.com/
+            - img "Docker icon" [ref=e350]
+            - text: Docker
+        - listitem [ref=e351]:
+          - link "CI/CD" [ref=e353] [cursor=pointer]:
+            - /url: https://github.com/features/actions
+            - img "CI/CD icon" [ref=e354]
+            - text: CI/CD
+        - listitem [ref=e355]:
+          - link "n8n" [ref=e357] [cursor=pointer]:
+            - /url: https://n8n.io/
+            - img "n8n icon" [ref=e358]
+            - text: n8n
+        - listitem [ref=e359]:
+          - link "Payload CMS" [ref=e361] [cursor=pointer]:
+            - /url: https://payloadcms.com/
+            - img "Payload CMS icon" [ref=e362]
+            - text: Payload CMS
+        - listitem [ref=e363]:
+          - link "Tailwind CSS" [ref=e364] [cursor=pointer]:
+            - /url: https://tailwindcss.com/
+            - img "Tailwind CSS icon" [ref=e365]
+            - text: Tailwind CSS
+        - listitem [ref=e366]:
+          - link "Figma" [ref=e367] [cursor=pointer]:
+            - /url: https://www.figma.com/
+            - img "Figma icon" [ref=e368]
+            - text: Figma
+        - listitem [ref=e369]:
+          - link "JavaScript" [ref=e370] [cursor=pointer]:
+            - /url: https://developer.mozilla.org/en-US/docs/Web/JavaScript
+            - img "JavaScript icon" [ref=e371]
+            - text: JavaScript
+        - listitem [ref=e372]:
+          - link "Python" [ref=e373] [cursor=pointer]:
+            - /url: https://www.python.org/
+            - img "Python icon" [ref=e374]
+            - text: Python
+        - listitem [ref=e375]:
+          - link "Java" [ref=e376] [cursor=pointer]:
+            - /url: https://www.java.com/
+            - img "Java icon" [ref=e377]
+            - text: Java
+        - listitem [ref=e378]:
+          - link "Advanced Algorithms" [ref=e379] [cursor=pointer]:
+            - /url: https://en.wikipedia.org/wiki/Algorithm
+            - img "Algorithms icon" [ref=e380]
+            - text: Algorithms
+        - listitem [ref=e381]:
+          - link "Data Structures" [ref=e382] [cursor=pointer]:
+            - /url: https://en.wikipedia.org/wiki/Data_structure
+            - img "Data Structures icon" [ref=e383]
+            - text: Data Structures
+        - listitem [ref=e384]:
+          - link "OOP Principles" [ref=e385] [cursor=pointer]:
+            - /url: https://en.wikipedia.org/wiki/Object-oriented_programming
+            - img "OOP icon" [ref=e386]
+            - text: OOP
+        - listitem [ref=e387]:
+          - link "shadcn/ui" [ref=e388] [cursor=pointer]:
+            - /url: https://ui.shadcn.com/
+            - img "shadcn/ui icon" [ref=e389]
+            - text: shadcn/ui
+        - listitem [ref=e390]:
+          - link "Radix UI" [ref=e391] [cursor=pointer]:
+            - /url: https://www.radix-ui.com/
+            - img "Radix UI icon" [ref=e392]
+            - text: Radix UI
+        - listitem [ref=e393]:
+          - link "Base UI" [ref=e394] [cursor=pointer]:
+            - /url: https://base-ui.com/
+            - img "Base UI icon" [ref=e395]
+            - text: Base UI
+        - listitem [ref=e396]:
+          - link "Redux" [ref=e397] [cursor=pointer]:
+            - /url: https://redux.js.org/
+            - img "Redux icon" [ref=e398]
+            - text: Redux
+        - listitem [ref=e399]:
+          - link "Recoil" [ref=e400] [cursor=pointer]:
+            - /url: https://recoiljs.org/
+            - img "Recoil icon" [ref=e401]
+            - text: Recoil
+        - listitem [ref=e402]:
+          - link "React Native" [ref=e403] [cursor=pointer]:
+            - /url: https://reactnative.dev/
+            - img "React Native icon" [ref=e404]
+            - text: React Native
+        - listitem [ref=e405]:
+          - link "React Navigation" [ref=e406] [cursor=pointer]:
+            - /url: https://reactnavigation.org/
+            - img "React Navigation icon" [ref=e407]
+            - text: React Navigation
+        - listitem [ref=e408]:
+          - link "MySQL" [ref=e409] [cursor=pointer]:
+            - /url: https://www.mysql.com/
+            - img "MySQL icon" [ref=e410]
+            - text: MySQL
+        - listitem [ref=e411]:
+          - link "Firebase" [ref=e412] [cursor=pointer]:
+            - /url: https://firebase.google.com/
+            - img "Firebase icon" [ref=e413]
+            - text: Firebase
+        - listitem [ref=e414]:
+          - link "Supabase" [ref=e415] [cursor=pointer]:
+            - /url: https://supabase.com/
+            - img "Supabase icon" [ref=e416]
+            - text: Supabase
+        - listitem [ref=e417]:
+          - link "Google Cloud" [ref=e418] [cursor=pointer]:
+            - /url: https://cloud.google.com/
+            - img "Google Cloud icon" [ref=e419]
+            - text: Google Cloud
+        - listitem [ref=e420]:
+          - link "Git" [ref=e421] [cursor=pointer]:
+            - /url: https://git-scm.com/
+            - img "Git icon" [ref=e422]
+            - text: Git
+        - listitem [ref=e423]:
+          - link "GitHub" [ref=e424] [cursor=pointer]:
+            - /url: https://github.com/
+            - img "GitHub icon" [ref=e425]
+            - text: GitHub
+        - listitem [ref=e426]:
+          - link "Agile and Scrum" [ref=e427] [cursor=pointer]:
+            - /url: https://www.scrum.org/
+            - img "Agile & Scrum icon" [ref=e428]
+            - text: Agile & Scrum
+        - listitem [ref=e429]:
+          - link "Project Flow" [ref=e430] [cursor=pointer]:
+            - /url: https://www.atlassian.com/software/jira
+            - img "Project Flow icon" [ref=e431]
+            - text: Project Flow
+        - listitem [ref=e432]:
+          - link "Version Control" [ref=e433] [cursor=pointer]:
+            - /url: https://git-scm.com/
+            - img "Version Control icon" [ref=e434]
+            - text: Version Control
+        - listitem [ref=e435]:
+          - link "Teamwork" [ref=e436] [cursor=pointer]:
+            - /url: https://slack.com/
+            - img "Teamwork icon" [ref=e437]
+            - text: Teamwork
+        - listitem [ref=e438]:
+          - link "macOS" [ref=e439] [cursor=pointer]:
+            - /url: https://www.apple.com/macos/
+            - img "macOS icon" [ref=e440]
+            - text: macOS
+        - listitem [ref=e441]:
+          - link "Linux" [ref=e442] [cursor=pointer]:
+            - /url: https://www.linux.org/
+            - img "Linux icon" [ref=e443]
+            - text: Linux
+        - listitem [ref=e444]:
+          - link "Windows" [ref=e445] [cursor=pointer]:
+            - /url: https://www.microsoft.com/windows
+            - img "Windows icon" [ref=e446]
+            - text: Windows
+        - listitem [ref=e447]:
+          - link "Claude" [ref=e448] [cursor=pointer]:
+            - /url: https://claude.ai/
+            - img "Claude icon" [ref=e449]
+            - text: Claude
+        - listitem [ref=e450]:
+          - link "Cursor" [ref=e451] [cursor=pointer]:
+            - /url: https://cursor.com/
+            - img "Cursor icon" [ref=e452]
+            - text: Cursor
+        - listitem [ref=e453]:
+          - link "ChatGPT" [ref=e454] [cursor=pointer]:
+            - /url: https://openai.com/chatgpt/
+            - img "ChatGPT icon" [ref=e455]
+            - text: ChatGPT
+    - generic [ref=e457]:
+      - heading "Product Systems" [level=2] [ref=e459]
+      - generic [ref=e461]:
+        - generic [ref=e462]:
+          - img "Weave" [ref=e465]
+          - generic [ref=e467]:
+            - heading "AI PRODUCT SYSTEM" [level=4] [ref=e468]
+            - heading "Weave" [level=3] [ref=e469]
+            - paragraph [ref=e470]: Prompt-to-product engineering system that generates application structure, code files, live previews, and in-browser editing through WebContainer workflows.
+            - link "View System →" [ref=e471] [cursor=pointer]:
+              - /url: https://weave-dhruv.vercel.app/
+              - text: View System
+              - generic [ref=e472]: →
+        - generic [ref=e473]:
+          - img "CheckMate" [ref=e476]
+          - generic [ref=e478]:
+            - heading "REAL-TIME PRODUCT SYSTEM" [level=4] [ref=e479]
+            - heading "CheckMate" [level=3] [ref=e480]
+            - paragraph [ref=e481]: Low-latency chess and video communication platform using WebRTC, WebSockets, game-state synchronization, and scalable live-session architecture.
+            - link "View System →" [ref=e482] [cursor=pointer]:
+              - /url: https://checkmate-dhruv.vercel.app/
+              - text: View System
+              - generic [ref=e483]: →
+        - generic [ref=e484]:
+          - img "Muzique" [ref=e487]
+          - generic [ref=e489]:
+            - heading "SAAS PRODUCT SYSTEM" [level=4] [ref=e490]
+            - heading "Muzique" [level=3] [ref=e491]
+            - paragraph [ref=e492]: Collaborative music SaaS platform with real-time queue voting, monetization workflows, authentication, and backend architecture designed for shared sessions.
+            - link "View System →" [ref=e493] [cursor=pointer]:
+              - /url: https://muzique.vercel.app/
+              - text: View System
+              - generic [ref=e494]: →
+    - generic [ref=e497]:
+      - heading "System Case Files(5)" [level=2] [ref=e499]
+      - generic [ref=e500]:
+        - generic [ref=e503]:
+          - generic [ref=e504]: "01"
+          - generic [ref=e505]:
+            - heading "Weave" [level=3] [ref=e506]
+            - paragraph [ref=e507]: "2025"
+          - generic [ref=e508]:
+            - link "Open Weave repository" [ref=e509] [cursor=pointer]:
+              - /url: https://github.com/Dhruvp132/weave
+            - button "Expand Weave details" [ref=e513]
+        - generic [ref=e518]:
+          - generic [ref=e519]: "02"
+          - generic [ref=e520]:
+            - heading "CheckMate" [level=3] [ref=e521]
+            - paragraph [ref=e522]: "2025"
+          - generic [ref=e523]:
+            - link "Open CheckMate repository" [ref=e524] [cursor=pointer]:
+              - /url: https://github.com/Dhruvp132/CheckMate
+            - button "Expand CheckMate details" [ref=e528]
+        - generic [ref=e533]:
+          - generic [ref=e534]: "03"
+          - generic [ref=e535]:
+            - heading "Metaverse Game" [level=3] [ref=e536]
+            - paragraph [ref=e537]: "2024"
+          - generic [ref=e538]:
+            - link "Open Metaverse Game repository" [ref=e539] [cursor=pointer]:
+              - /url: https://github.com/Dhruvp132/MetaverseGame
+            - button "Expand Metaverse Game details" [ref=e543]
+      - button "Show More Systems" [ref=e547]
+    - generic [ref=e551]:
+      - paragraph [ref=e552]: WHAT I HAVE STUDIED SO FAR
+      - heading "Education." [level=2] [ref=e553]
+      - generic [ref=e555]:
+        - generic [ref=e557]:
+          - heading "Bachelor of Technology (BTech)" [level=3] [ref=e558]
+          - paragraph [ref=e559]: Silver Oak University, Ahmedabad
+          - paragraph [ref=e560]: "Computer Science Engineering | CGPA: 9.28"
+          - paragraph [ref=e561]: Graduated 2024 | Top 5% of the Class
+        - generic [ref=e564]:
+          - heading "Academic Highlights" [level=3] [ref=e565]
+          - list [ref=e566]:
+            - listitem [ref=e567]: • Strong foundation in Data Structures & Algorithms
+            - listitem [ref=e568]: • Advanced understanding of DBMS, OS & Computer Networks
+            - listitem [ref=e569]: • Focused on scalable system design & backend architecture
+    - generic [ref=e572]:
+      - generic [ref=e573]:
+        - paragraph [ref=e574]: CONTINUOUS LEARNING
+        - heading "Certifications" [level=2] [ref=e575]
+      - generic [ref=e576]:
+        - generic [ref=e577]:
+          - img "Apna College" [ref=e578]
+          - generic [ref=e580]:
+            - paragraph [ref=e581]: Apna College
+            - heading "Data Structures & Algorithms" [level=3] [ref=e582]
+            - link "View Credential →" [ref=e583] [cursor=pointer]:
+              - /url: https://drive.google.com/file/d/1iu4QYblwrLj05nUyy-CCRHE6NYoGs1EH/view
+              - text: View Credential
+              - generic [ref=e584]: →
+        - generic [ref=e585]:
+          - img "IBM Cognitive Class" [ref=e586]
+          - generic [ref=e588]:
+            - paragraph [ref=e589]: IBM Cognitive Class
+            - heading "Python for Data Science" [level=3] [ref=e590]
+            - link "View Credential →" [ref=e591] [cursor=pointer]:
+              - /url: https://drive.google.com/file/d/13AitOLtQD2CELqrOzGF9n0Pp79dB7ZE8/view
+              - text: View Credential
+              - generic [ref=e592]: →
+        - generic [ref=e593]:
+          - img "LeetCode" [ref=e594]
+          - generic [ref=e596]:
+            - paragraph [ref=e597]: LeetCode
+            - heading "450+ DSA Problems Solved" [level=3] [ref=e598]
+            - link "View Credential →" [ref=e599] [cursor=pointer]:
+              - /url: https://leetcode.com/u/Dhruvp13/
+              - text: View Credential
+              - generic [ref=e600]: →
+      - generic [ref=e601]:
+        - button "Show Data Structures & Algorithms" [ref=e603]
+        - button "Show Python for Data Science" [ref=e605]
+        - button "Show 450+ DSA Problems Solved" [ref=e607]
+    - generic [ref=e611]:
+      - generic [ref=e612]:
+        - heading "BUILD SOFTWARE THAT SCALES" [level=2] [ref=e613]
+        - paragraph [ref=e614]: Share the product, platform, or internal business system you want to build. I will route the message through email so the conversation starts directly.
+        - textbox "Your business email" [ref=e616]
+        - textbox "What system are you building?" [ref=e618]
+        - generic [ref=e619]:
+          - button "Send product engineering brief" [ref=e620]: Send Product Brief
+          - paragraph [ref=e623]: For SaaS platforms, business systems, automation workflows, and modern product builds.
+      - generic [ref=e625]:
+        - paragraph [ref=e626]: Product Engineering Partner
+        - heading "Scalable SaaS and business systems for ambitious teams." [level=3] [ref=e627]
+        - generic [ref=e628]:
+          - generic [ref=e629]: 5+ businesses supported
+          - generic [ref=e632]: 10+ software systems shipped
+          - generic [ref=e635]: SaaS, commerce, automation, and real-time products
+          - generic [ref=e638]: Architecture, UX, backend workflows, and deployment
+        - link "dhruvpatel13210@gmail.com" [ref=e641] [cursor=pointer]:
+          - /url: mailto:dhruvpatel13210@gmail.com
+  - button "Open Next.js Dev Tools" [ref=e650] [cursor=pointer]
+  - alert [ref=e655]

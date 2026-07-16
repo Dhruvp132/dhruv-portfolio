@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Tooltip from "./Tooltip";
+// import Tooltip from "./Tooltip";
 
 export default function Overview2() {
   const roles = [
@@ -90,13 +90,13 @@ export default function Overview2() {
                   <div className="mb-2 flex flex-wrap items-center gap-2">
                     <h4 className="text-lg font-bold text-white md:text-xl">{role.title}</h4>
                     {role.status ? (
-                      <Tooltip
-                        content={
-                          role.statusTone === "primary"
-                            ? "Current product engineering role."
-                            : "Active independent client systems."
-                        }
-                      >
+                      // <Tooltip
+                      //   content={
+                      //     role.statusTone === "primary"
+                      //       ? "Current product engineering role."
+                      //       : "Active independent client systems."
+                      //   }
+                      // >
                         <span
                           className={`inline-flex items-center gap-2 rounded-full border px-2.5 py-1 text-[9px] font-bold uppercase tracking-[0.18em] transition-colors duration-300 ${
                             role.statusTone === "primary"
@@ -113,7 +113,7 @@ export default function Overview2() {
                           />
                           {role.status}
                         </span>
-                      </Tooltip>
+                      // </Tooltip>
                     ) : null}
                   </div>
                   <p className="text-[var(--accent-primary)] text-sm font-semibold">{role.company}</p>

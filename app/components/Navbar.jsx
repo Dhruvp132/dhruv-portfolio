@@ -1,8 +1,8 @@
 "use client";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence, useScroll, useSpring } from "motion/react";
-import { Menu, X, ChevronRight } from "lucide-react";
-import Tooltip from "./Tooltip";
+import { Menu, X, ChevronRight, Download } from "lucide-react";
+// import Tooltip from "./Tooltip";
 
 const NAV_ITEMS = [
   { name: "About", href: "#overview" },
@@ -74,6 +74,20 @@ export default function Navbar() {
 
             <div data-oneko-dodge="true" className="flex items-center gap-3">
               <motion.a
+                href="/resume/Dhruv_Patel_Resume.pdf"
+                download
+                aria-label="Download resume"
+                title="Download resume"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ delay: 0.45 }}
+                className="rounded-full border border-white/15 p-2.5 text-white/70 transition-colors hover:text-white hover:border-[var(--accent-primary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-primary)]/70 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+              >
+                <Download size={16} />
+              </motion.a>
+              <motion.a
                 href="#projects"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -97,7 +111,7 @@ export default function Navbar() {
 
           {/* Mobile Toggle */}
           <div className="lg:hidden flex items-center">
-            <Tooltip content={isOpen ? "Close menu" : "Open menu"} side="left">
+            {/* <Tooltip content={isOpen ? "Close menu" : "Open menu"} side="left"> */}
               <button
                 type="button"
                 aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
@@ -106,7 +120,7 @@ export default function Navbar() {
               >
                 {isOpen ? <X size={24} /> : <Menu size={24} />}
               </button>
-            </Tooltip>
+            {/* </Tooltip> */}
           </div>
         </div>
 
@@ -126,16 +140,16 @@ export default function Navbar() {
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-[60] bg-black/90 backdrop-blur-2xl flex flex-col items-center justify-center lg:hidden"
           >
-            <Tooltip content="Close menu" side="left" className="absolute right-[35px] top-8">
+            {/* <Tooltip content="Close menu" side="left" className="absolute right-[35px] top-8"> */}
               <button
                 type="button"
                 aria-label="Close navigation menu"
                 onClick={closeMenu}
-                className="rounded p-2 text-white/50 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-primary)]/70"
+                className="absolute right-[35px] top-8 rounded p-2 text-white/50 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-primary)]/70"
               >
                 <X size={32} />
               </button>
-            </Tooltip>
+            {/* </Tooltip> */}
 
             <div className="flex flex-col items-center gap-8">
               {NAV_ITEMS.map((item, index) => (
@@ -163,7 +177,18 @@ export default function Navbar() {
                 Book a Call
               </motion.a>
 
-
+              <motion.a
+                href="/resume/Dhruv_Patel_Resume.pdf"
+                download
+                onClick={closeMenu}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: (NAV_ITEMS.length + 1) * 0.1 }}
+                className="mt-4 flex items-center gap-2 rounded-full border border-white/20 px-8 py-3 text-sm font-bold uppercase tracking-[0.2em] text-white/70 transition-all duration-300 hover:border-white hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-primary)]/70"
+              >
+                <Download size={16} />
+                Resume
+              </motion.a>
 
             </div>
 
